@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        
+        <record id="action_order_line_product_sales_tree" model="ir.actions.act_window">
+            <field name="context">{'group_by':'product_id'}</field>
+            <field name="name">Sales by Product</field>
+            <field name="res_model">sale.order.line</field>
+            <field name="view_id" ref="sale.view_order_line_tree"/>
+        </record>
+        <menuitem id="menu_order_line_product_sales"
+                action="action_order_line_product_sales_tree" parent="base.menu_sales"
+                sequence="7"/>
+
+    </data>
+</openerp>
