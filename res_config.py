@@ -20,4 +20,17 @@
 #
 ##############################################################################
 
-import res_config
+from openerp.osv import fields, osv
+
+import logging
+
+logger = logging.getLogger(__name__)
+
+
+class sale_configuration(osv.TransientModel):
+    _inherit = 'sale.config.settings'
+
+    _columns = {
+    	'module_sale_productsales': fields.boolean('Show product sales in a new menu',
+            help="This option installs sale_productsales module."),
+    }

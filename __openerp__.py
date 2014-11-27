@@ -2,11 +2,11 @@
 ##############################################################################
 #
 #    sale_productsales
-#    (C) 2014 big-consulting GmbH 
-#    (C) 2014 OpenGlobe 
-#    Author: Thorsten Vocks (openBIG.org) 
+#    (C) 2014 big-consulting GmbH
+#    (C) 2014 OpenGlobe
+#    Author: Thorsten Vocks (openBIG.org)
 #    Author: Mikołaj Dziurzyński, Grzegorz Grzelak (OpenGlobe)
-#    
+#
 #    All Rights reserved
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -24,23 +24,22 @@
 #
 ##############################################################################
 {
-    "name" : "Product Sales View",
-    "version" : "0.01 (8.0)",
-    "author" : "openbig.org",
+    "name": "Product Sales View",
+    "version": "0.01 (8.0)",
+    "author": "openbig.org",
     "website": "http://www.openbig.org",
-    "category" : "Sales, CRM",
+    "category": "Sales, CRM",
     "description": """This module adds current sales view.""",
-    "depends" : [
-                    "sale",
-                    "crm"
-                ],
-    "demo_xml" : [],
-    "data" : [
-                    "product_sales_view.xml",
+    "depends": [
+        "sale",
+        "crm"
+    ],
+    "demo_xml": [],
+    "data": [
+        "product_sales_view.xml",
 
-                    ],
+    ],
     "active": False,
     "installable": True
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
