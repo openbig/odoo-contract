@@ -6,10 +6,11 @@
             <field name="context">{'group_by':'product_id'}</field>
             <field name="name">Sales by Product</field>
             <field name="res_model">sale.order.line</field>
+            <field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel'))]</field>
             <field name="view_id" ref="sale.view_order_line_tree"/>
         </record>
         <menuitem id="menu_order_line_product_sales"
-                action="action_order_line_product_sales_tree" parent="base.menu_sales"
+                action="action_order_line_product_sales_tree" groups="base.group_sale_manager" parent="base.menu_sales"
                 sequence="7"/>
     </data>
 </openerp>

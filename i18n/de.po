@@ -20,3 +20,14 @@ msgstr ""
 #: model:ir.ui.menu,name:sale_productsales.menu_order_line_product_sales
 msgid "Sales by Product"
 msgstr "Produktverkauf"
+
+#. module: sale_productsales
+#: field:sale.config.settings,module_sale_productsales:0
+msgid "Show product sales in a new menu"
+msgstr ""
+
+#. module: sale_productsales
+#: help:sale.config.settings,module_sale_productsales:0
+msgid "This option installs sale_productsales module."
+msgstr ""
+

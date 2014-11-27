@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-26 18:32+0000\n"
-"PO-Revision-Date: 2014-11-26 18:32+0000\n"
+"POT-Creation-Date: 2014-11-27 14:56+0000\n"
+"PO-Revision-Date: 2014-11-27 14:56+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,4 +20,14 @@ msgstr ""
 #: model:ir.ui.menu,name:sale_productsales.menu_order_line_product_sales
 msgid "Sales by Product"
 msgstr "Sales by Product"
+
+#. module: sale_productsales
+#: field:sale.config.settings,module_sale_productsales:0
+msgid "Show product sales in a new menu"
+msgstr "Show product sales in a new menu"
+
+#. module: sale_productsales
+#: help:sale.config.settings,module_sale_productsales:0
+msgid "This option installs sale_productsales module."
+msgstr "This option installs sale_productsales module."
 

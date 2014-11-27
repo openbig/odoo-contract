@@ -31,6 +31,6 @@ class sale_configuration(osv.TransientModel):
     _inherit = 'sale.config.settings'
 
     _columns = {
-    	'module_sale_productsales': fields.boolean('Show product sales in a new menu',
-            help="This option installs sale_productsales module."),
+        'module_sale_productsales': fields.boolean('Show product sales in a new menu',
+                                                   help="This option installs sale_productsales module."),
     }
