@@ -3,11 +3,21 @@
     <data>
         
         <record id="action_order_line_product_sales_tree" model="ir.actions.act_window">
-            <field name="context">{'group_by':'product_id'}</field>
+            <field name="context">{'search_default_group_products':1}</field>
             <field name="name">Sales by Product</field>
             <field name="res_model">sale.order.line</field>
             <field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel'))]</field>
             <field name="view_id" ref="sale.view_order_line_tree"/>
+        </record>
+
+        <record id="view_sales_order_line_filter_remove" model="ir.ui.view">
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="sale.view_sales_order_line_filter"/>
+            <field name="arch" type="xml">
+                <filter string="Product" position="replace">
+                    <filter name="group_products" string="Product" icon="terp-accessories-archiver" domain="[]" context="{'group_by':'product_id'}"/>
+                </filter>
+            </field>
         </record>
         <menuitem id="menu_order_line_product_sales"
                 action="action_order_line_product_sales_tree" groups="base.group_sale_manager" parent="base.menu_sales"

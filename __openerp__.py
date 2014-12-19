@@ -25,7 +25,7 @@
 ##############################################################################
 {
     "name": "Product Sales View",
-    "version": "0.02 (8.0)",
+    "version": "0.03 (8.0)",
     "author": "openbig.org",
     "website": "http://www.openbig.org",
     "category": "Sales, CRM",
