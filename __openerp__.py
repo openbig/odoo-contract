@@ -33,7 +33,7 @@
     "depends": [
                 "account_analytic_analysis",
                 "sale",
-                "crm_contractmanagement",
+                "contractmanagement_licencetypes",
     ],
     "demo_xml": [],
     "data": [
