@@ -1,115 +1,123 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* contractmanagement_licenses
+# 	* contractmanagement_licenses
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0rc1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-09 10:37+0000\n"
-"PO-Revision-Date: 2015-01-09 10:37+0000\n"
-"Last-Translator: <>\n"
+"PO-Revision-Date: 2015-01-15 09:50+0100\n"
+"Last-Translator: openbig.org - Thorsten Vocks <thorsten.vocks@openbig.org>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"X-Generator: Poedit 1.5.5\n"
 
 #. module: contractmanagement_licenses
 #: model:ir.actions.act_window,help:contractmanagement_licenses.action_order_line_contract_applications_tree
-msgid "<p>\n"
+msgid ""
+"<p>\n"
 "                No applications yet on this contract.\n"
 "              </p>\n"
 "            "
 msgstr ""
+"<p>\n"
+"                Für diesen Vertrag gibt noch keine zugehörige Applikation.\n"
+"              </p>"
 
 #. module: contractmanagement_licenses
 #: model:ir.actions.act_window,help:contractmanagement_licenses.action_order_line_contract_modules_tree
-msgid "<p>\n"
+msgid ""
+"<p>\n"
 "                No modules yet on this contract.\n"
 "              </p>\n"
 "            "
 msgstr ""
+"<p>\n"
+"                Für diesen Vertrag gibt noch kein zugehöriges Modul.\n"
+"              </p>"
 
 #. module: contractmanagement_licenses
 #: field:sale.order.line,is_application:0
 msgid "Application?"
-msgstr ""
+msgstr "Applikation ?"
 
 #. module: contractmanagement_licenses
 #: view:account.analytic.account:contractmanagement_licenses.account_analytic_account_timesheet_form_m_a_buttons
 msgid "Applications"
-msgstr ""
+msgstr "Applikation"
 
 #. module: contractmanagement_licenses
 #: field:contract.view.setting,applications_categ:0
 #: field:sale.config.settings,applications_product_categ:0
 msgid "Applications Category"
-msgstr ""
+msgstr "Kategorie für Applikation"
 
 #. module: contractmanagement_licenses
 #: model:ir.actions.act_window,name:contractmanagement_licenses.action_order_line_contract_applications_tree
 msgid "Contract's Applications"
-msgstr ""
+msgstr "Applikationen zum Vertrag"
 
 #. module: contractmanagement_licenses
 #: model:ir.actions.act_window,name:contractmanagement_licenses.action_order_line_contract_modules_tree
 msgid "Contract's Modules"
-msgstr ""
+msgstr "Module zum Vertrag"
 
 #. module: contractmanagement_licenses
 #: field:contract.view.setting,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Erstellt durch"
 
 #. module: contractmanagement_licenses
 #: field:contract.view.setting,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Erstellt am"
 
 #. module: contractmanagement_licenses
 #: field:contract.view.setting,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: contractmanagement_licenses
 #: field:contract.view.setting,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Aktualisiert von"
 
 #. module: contractmanagement_licenses
 #: field:contract.view.setting,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Aktualisiert am"
 
 #. module: contractmanagement_licenses
 #: field:sale.order.line,is_module:0
 msgid "Module?"
-msgstr ""
+msgstr "Module ?"
 
 #. module: contractmanagement_licenses
 #: view:account.analytic.account:contractmanagement_licenses.account_analytic_account_timesheet_form_m_a_buttons
 msgid "Modules"
-msgstr ""
+msgstr "Module"
 
 #. module: contractmanagement_licenses
 #: field:contract.view.setting,modules_categ:0
 #: field:sale.config.settings,modules_product_categ:0
 msgid "Modules Category"
-msgstr ""
+msgstr "Kategorie für Module"
 
 #. module: contractmanagement_licenses
 #: field:sale.config.settings,module_contractmanagement_licenses:0
 msgid "Modules and Applications Views on Contracts"
-msgstr ""
+msgstr "Applikations- und Moduleanzeige in Verträgen"
 
 #. module: contractmanagement_licenses
 #: model:ir.model,name:contractmanagement_licenses.model_sale_order_line
 msgid "Sales Order Line"
-msgstr ""
+msgstr "Auftragszeile"
 
 #. module: contractmanagement_licenses
 #: view:sale.order:contractmanagement_licenses.view_sale_order_compute_fields
 msgid "Sales Order Lines"
-msgstr ""
-
+msgstr "Auftragszeilen"
