@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_account_analytic_account_form_portal" model="ir.ui.view">
+            <field name="name">analytic.analytic.account.form.portal</field>
+            <field name="model">account.analytic.account</field>
+            <field name="priority" eval="100"/>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="account_analytic_analysis.account_analytic_account_form_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position='attributes'>
+                    <attribute name="attrs">{'invisible':1}</attribute>
+                </xpath>
+                <field name="partner_id" position="attributes">
+                    <attribute name="attrs">{'required': [('type','=','contract'),('recurring_invoices', '=', True)]}</attribute>
+                </field>
+                <xpath expr="//separator[@name='toinvoice']" position="replace"/>
+                <xpath expr="//table[@class='oe_form_analytic_account']" position="replace"></xpath>
+                <xpath expr="//group[@name='invoice_on_timesheets']" position="replace"></xpath>
+                <xpath expr="//button[@string='Cost/Revenue']" position="replace"></xpath>
+                <field name="message_ids" position="replace">
+                    <field name="message_ids" widget="mail_thread" readonly="1"/>
+                </field>
+                <field name="sla_ids" position="replace">
+                    <field name="sla_ids" nolabel="1" readonly="1"/>
+                </field>
+                <xpath expr='//div[@name="project"]' position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_account_analytic_account_tree_portal" model="ir.ui.view">
+            <field name="name">analytic.analytic.account.form.portal</field>
+            <field name="model">account.analytic.account</field>
+            <field name="arch" type="xml">
+                <tree string="Your Contracts">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="date_start"/>
+                    <field name="date"/>
+                    <field name="manager_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_view_contract" model="ir.actions.act_window">
+            <field name="name">Contracts</field>
+            <field name="res_model">account.analytic.account</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'default_type':'contract'}</field>
+            <field name="domain">[('type','=','contract')]</field>
+            <field name="search_view_id" ref="account_analytic_analysis.view_account_analytic_account_overdue_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new contract.
+                </p><p>
+                    You have no contracts available.
+                </p>
+            </field>
+        </record>
+
+        <record id="portal_action_contracts_tree_spec" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="open_view_contract"/>
+            <field name="view_id" ref="view_account_analytic_account_tree_portal"/>
+            <field name="view_mode">tree</field>
+            <field name="sequence" eval="0"/>
+        </record>
+
+        <record id="portal_action_invoices_form_spec" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="open_view_contract"/>
+            <field name="view_id" ref="view_account_analytic_account_form_portal"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="80"/>
+            <field name="priority" eval="100"/>
+        </record>
+        <menuitem name="Contracts" id="portal_contracts" parent="portal.portal_menu" sequence="25" groups="base.group_portal"/>
+        <menuitem name="Your Contracts" id="portal_services_contracts" parent="portal_contracts"
+            action="open_view_contract" sequence="10" groups="base.group_portal"/>
+
+    </data>
+</openerp>
