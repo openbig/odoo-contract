@@ -75,4 +75,4 @@ class sale_order_line(models.Model):
                 return False
 
     is_module = fields.Boolean(string="Module?")
-    is_application = fields.Boolean(string="Application?")
+    is_application = fields.Boolean(string="Objectpackage?")

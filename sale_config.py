@@ -35,9 +35,9 @@ class sale_configuration(osv.TransientModel):
     _inherit = 'sale.config.settings'
 
     _columns = {
-        'module_contractmanagement_licenses': fields.boolean('Modules and Applications Views on Contracts'),
+        'module_contractmanagement_licenses': fields.boolean('Modules and Objectpackages Views on Contracts'),
         'modules_product_categ': fields.many2one('product.category', 'Modules Category'),
-        'applications_product_categ': fields.many2one('product.category', 'Applications Category'),
+        'applications_product_categ': fields.many2one('product.category', 'Objectpackages Category'),
     }
 
     def default_get(self, cr, uid, fields, context=None):

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 8.0rc1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-09 10:37+0000\n"
-"PO-Revision-Date: 2015-01-15 09:50+0100\n"
+"PO-Revision-Date: 2015-03-03 13:06+0100\n"
 "Last-Translator: openbig.org - Thorsten Vocks <thorsten.vocks@openbig.org>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -42,24 +42,24 @@ msgstr ""
 
 #. module: contractmanagement_licenses
 #: field:sale.order.line,is_application:0
-msgid "Application?"
-msgstr "Applikation ?"
+msgid "Objectpackage?"
+msgstr "Objektpaket ?"
 
 #. module: contractmanagement_licenses
 #: view:account.analytic.account:contractmanagement_licenses.account_analytic_account_timesheet_form_m_a_buttons
-msgid "Applications"
-msgstr "Applikation"
+msgid "Objectpackages"
+msgstr "Objektpakete"
 
 #. module: contractmanagement_licenses
 #: field:contract.view.setting,applications_categ:0
 #: field:sale.config.settings,applications_product_categ:0
-msgid "Applications Category"
-msgstr "Kategorie für Applikation"
+msgid "Objektpackage Category"
+msgstr "Kategorie für Objektpaket"
 
 #. module: contractmanagement_licenses
 #: model:ir.actions.act_window,name:contractmanagement_licenses.action_order_line_contract_applications_tree
-msgid "Contract's Applications"
-msgstr "Applikationen zum Vertrag"
+msgid "Contract's Objectpackages"
+msgstr "Objektpakete zum Vertrag"
 
 #. module: contractmanagement_licenses
 #: model:ir.actions.act_window,name:contractmanagement_licenses.action_order_line_contract_modules_tree
@@ -109,8 +109,8 @@ msgstr "Kategorie für Module"
 
 #. module: contractmanagement_licenses
 #: field:sale.config.settings,module_contractmanagement_licenses:0
-msgid "Modules and Applications Views on Contracts"
-msgstr "Applikations- und Moduleanzeige in Verträgen"
+msgid "Modules and Objectpackages Views on Contracts"
+msgstr "Anzeige der Objektpaket- und Module in Verträgen"
 
 #. module: contractmanagement_licenses
 #: model:ir.model,name:contractmanagement_licenses.model_sale_order_line

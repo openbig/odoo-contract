@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-09 10:37+0000\n"
-"PO-Revision-Date: 2015-01-09 10:37+0000\n"
+"POT-Creation-Date: 2015-03-03 11:42+0000\n"
+"PO-Revision-Date: 2015-03-03 11:42+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,10 +21,7 @@ msgid "<p>\n"
 "                No applications yet on this contract.\n"
 "              </p>\n"
 "            "
-msgstr "<p>\n"
-"                No applications yet on this contract.\n"
-"              </p>\n"
-"            "
+msgstr ""
 
 #. module: contractmanagement_licenses
 #: model:ir.actions.act_window,help:contractmanagement_licenses.action_order_line_contract_modules_tree
@@ -32,90 +29,87 @@ msgid "<p>\n"
 "                No modules yet on this contract.\n"
 "              </p>\n"
 "            "
-msgstr "<p>\n"
-"                No modules yet on this contract.\n"
-"              </p>\n"
-"            "
+msgstr ""
 
 #. module: contractmanagement_licenses
 #: field:sale.order.line,is_application:0
 msgid "Application?"
-msgstr "Application?"
-
-#. module: contractmanagement_licenses
-#: view:account.analytic.account:contractmanagement_licenses.account_analytic_account_timesheet_form_m_a_buttons
-msgid "Applications"
-msgstr "Applications"
+msgstr ""
 
 #. module: contractmanagement_licenses
 #: field:contract.view.setting,applications_categ:0
 #: field:sale.config.settings,applications_product_categ:0
 msgid "Applications Category"
-msgstr "Applications Category"
+msgstr ""
 
 #. module: contractmanagement_licenses
 #: model:ir.actions.act_window,name:contractmanagement_licenses.action_order_line_contract_applications_tree
 msgid "Contract's Applications"
-msgstr "Contract's Applications"
+msgstr ""
 
 #. module: contractmanagement_licenses
 #: model:ir.actions.act_window,name:contractmanagement_licenses.action_order_line_contract_modules_tree
 msgid "Contract's Modules"
-msgstr "Contract's Modules"
+msgstr ""
 
 #. module: contractmanagement_licenses
 #: field:contract.view.setting,create_uid:0
 msgid "Created by"
-msgstr "Created by"
+msgstr ""
 
 #. module: contractmanagement_licenses
 #: field:contract.view.setting,create_date:0
 msgid "Created on"
-msgstr "Created on"
+msgstr ""
 
 #. module: contractmanagement_licenses
 #: field:contract.view.setting,id:0
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: contractmanagement_licenses
 #: field:contract.view.setting,write_uid:0
 msgid "Last Updated by"
-msgstr "Last Updated by"
+msgstr ""
 
 #. module: contractmanagement_licenses
 #: field:contract.view.setting,write_date:0
 msgid "Last Updated on"
-msgstr "Last Updated on"
+msgstr ""
+
+#. module: contractmanagement_licenses
+#: view:account.analytic.account:contractmanagement_licenses.account_analytic_account_timesheet_form_m_a_buttons
+msgid "Module"
+msgstr ""
 
 #. module: contractmanagement_licenses
 #: field:sale.order.line,is_module:0
 msgid "Module?"
-msgstr "Module?"
-
-#. module: contractmanagement_licenses
-#: view:account.analytic.account:contractmanagement_licenses.account_analytic_account_timesheet_form_m_a_buttons
-msgid "Modules"
-msgstr "Modules"
+msgstr ""
 
 #. module: contractmanagement_licenses
 #: field:contract.view.setting,modules_categ:0
 #: field:sale.config.settings,modules_product_categ:0
 msgid "Modules Category"
-msgstr "Modules Category"
+msgstr ""
 
 #. module: contractmanagement_licenses
 #: field:sale.config.settings,module_contractmanagement_licenses:0
 msgid "Modules and Applications Views on Contracts"
-msgstr "Modules and Applications Views on Contracts"
+msgstr ""
+
+#. module: contractmanagement_licenses
+#: view:account.analytic.account:contractmanagement_licenses.account_analytic_account_timesheet_form_m_a_buttons
+msgid "Objektpaket"
+msgstr ""
 
 #. module: contractmanagement_licenses
 #: model:ir.model,name:contractmanagement_licenses.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "Sales Order Line"
+msgstr ""
 
 #. module: contractmanagement_licenses
 #: view:sale.order:contractmanagement_licenses.view_sale_order_compute_fields
 msgid "Sales Order Lines"
-msgstr "Sales Order Lines"
+msgstr ""
 
