@@ -3,7 +3,7 @@
     <data>
         
         <record id="action_order_line_product_sales_tree" model="ir.actions.act_window">
-            <field name="context">{'search_default_group_products':1}</field>
+            <field name="context">{'search_default_group_products':1,'search_default_group_customers':1}</field>
             <field name="name">Sales by Product</field>
             <field name="res_model">sale.order.line</field>
             <field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel'))]</field>
@@ -16,6 +16,7 @@
             <field name="arch" type="xml">
                 <filter string="Product" position="replace">
                     <filter name="group_products" string="Product" icon="terp-accessories-archiver" domain="[]" context="{'group_by':'product_id'}"/>
+                    <filter name="group_customers" string="Customers" icon="terp-accessories-archiver" domain="[]" context="{'group_by':'order_partner_id'}"/>
                 </filter>
             </field>
         </record>
