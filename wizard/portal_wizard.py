@@ -94,5 +94,6 @@ class wizard_user(osv.osv_memory):
         except IndexError:
             raise osv.except_osv(_('Template not found!'),
                                  _('''Cannot find template for portal user invitations! The templates' name has to be = Portal Invitation  '''))
-
-        return templates_obj.send_mail(cr, SUPERUSER_ID, template.id, wizard_user.id)
+        _logger.warn('write here ')
+        _logger.warn(locals())    
+        return templates_obj.send_mail(cr, SUPERUSER_ID, template.id, wizard_user.id, force_send=True)
