@@ -75,9 +75,11 @@
             <field name="sequence" eval="80"/>
             <field name="priority" eval="100"/>
         </record>
-        <menuitem name="Contracts" id="portal_contracts" parent="portal.portal_menu" sequence="25" groups="base.group_portal"/>
+        <menuitem name="Contracts" id="portal_contracts" parent="portal.portal_menu" sequence="1" groups="base.group_portal"/>
         <menuitem name="Your Contracts" id="portal_services_contracts" parent="portal_contracts"
             action="open_view_contract" sequence="10" groups="base.group_portal"/>
+        <menuitem name="Projects" id="portal.portal_projects" parent="portal.portal_menu" groups="base.group_system" sequence="40"/>
+        <menuitem name="Leads &amp; Opportunities" id="crm_partner_assign.portal_leads" parent="portal.portal_menu" groups="base.group_system" sequence="25"/>
 
     </data>
 </openerp>
