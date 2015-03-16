@@ -35,6 +35,7 @@
         'crm_contractmanagement',
         'portal_sale',
         'web_kanban',
+        'crm_partner_assign',
     ],
     "demo_xml": [],
     "data": [
