@@ -29,5 +29,4 @@ from openerp.osv import fields, osv
 class account_analytic_account(osv.Model):
 	_inherit = 'account.analytic.account'
 	_columns = {
-		'color': fields.integer('Color Index'),
 	}

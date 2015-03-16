@@ -12,6 +12,24 @@
                 <xpath expr="//header" position='attributes'>
                     <attribute name="attrs">{'invisible':1}</attribute>
                 </xpath>
+                <field name='manager_id' position="replace"></field>
+                <field name="type" position="after">
+                    <field name="manager_id" string="Contract Manager"/>
+                    <field name="manager_tel" />
+                    <field name="manager_email"/>
+                    <separator/>
+                    <field name="manager_image" nolabel="1" widget="image" style="right: 0px"/>
+                </field>
+                <xpath expr="//field[@name='quantity_max']/.." position='replace'>
+                    <separator/>
+                </xpath>
+                <xpath expr="//label[@for='quantity_max']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <field name="code" position="replace"></field>
+                <xpath expr="//group[@name='main']//group">
+                    <field name="code"/>
+                </xpath>
                 <field name="partner_id" position="attributes">
                     <attribute name="attrs">{'required': [('type','=','contract'),('recurring_invoices', '=', True)]}</attribute>
                 </field>
@@ -19,6 +37,24 @@
                 <xpath expr="//table[@class='oe_form_analytic_account']" position="replace"></xpath>
                 <xpath expr="//group[@name='invoice_on_timesheets']" position="replace"></xpath>
                 <xpath expr="//button[@string='Cost/Revenue']" position="replace"></xpath>
+                <field name="template_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <separator string="Recurring Invoices" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </separator>
+                <xpath expr="//field[@name='recurring_invoices']/../.." position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath> 
+                <xpath expr="//label[@for='recurring_interval']/.." position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//label[@for='recurring_invoice_line_ids']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='recurring_invoice_line_ids']/.." position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
                 <field name="message_ids" position="replace">
                     <field name="message_ids" widget="mail_thread" readonly="1"/>
                 </field>
@@ -95,6 +131,7 @@
             <field name="domain">[('type','=','contract'),('partner_id','!=',False)]</field>
             <field name="view_id" ref="view_account_analytic_account_kanban_portal"/>
             <field name="search_view_id" ref="account_analytic_analysis.view_account_analytic_account_overdue_search"/>
+            <field name="multi">False</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
                     Click to create a new contract.
