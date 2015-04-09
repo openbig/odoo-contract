@@ -21,13 +21,30 @@
 ##############################################################################
 
 from openerp.osv import osv
-from openerp import fields 
+from openerp import fields
+
+import logging
+
+_logger = logging.getLogger(__name__)
+
 
 class res_partner_grade(osv.Model):
-	_inherit = 'res.partner.grade'
-	reseller_pricelist = fields.Many2one('product.pricelist','Reseller Pricelist')
-	commission_pricelist = fields.Many2one('product.pricelist','Commission Pricelist', domain="[('type', '=', 'partner_commission')]")
+    _inherit = 'res.partner.grade'
+    reseller_pricelist = fields.Many2one(
+        'product.pricelist', 'Reseller Pricelist')
+    commission_pricelist = fields.Many2one(
+        'product.pricelist', 'Commission Pricelist', domain="[('type', '=', 'partner_commission')]")
+
 
 class res_partner(osv.Model):
-	_inherit = 'res.partner'
-	commission_journal = fields.Many2one('account.journal', 'Journal for Commissions')
+    _inherit = 'res.partner'
+
+    def _commission_invoices(self):
+        for partner in self:
+            partner.commission_invoices_count = len(
+                self.env['account.invoice'].search([['partner_id', '=', partner.id],['commission_type','=','commission_invoice']]))
+
+    commission_journal = fields.Many2one(
+        'account.journal', 'Journal for Commissions')
+    commission_invoices_count = fields.Integer(
+        compute="_commission_invoices", string="Commission Invoices")

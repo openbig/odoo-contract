@@ -124,6 +124,6 @@
                 <field name="signal_send">subflow.paid</field>
             </record>
 
-        <!-- end -->
+         <!-- end -->
     </data>
 </openerp>

@@ -40,10 +40,10 @@
     "data": [
         "data/account_data.xml",
         "data/pricelist_type_data.xml",
+        "account_view.xml",
         "res_partner_view.xml",
         "crm_lead_view.xml",
         "sale_order_view.xml",
-        "account_view.xml",
     ],
     "active": False,
     "installable": True
