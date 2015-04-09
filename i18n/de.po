@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-09 16:28+0000\n"
 "PO-Revision-Date: 2015-04-09 16:28+0000\n"
-"Last-Translator: <>\n"
+"Last-Translator: <thorsten.vocks@openbig.org>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,13 +28,13 @@ msgid "<p class=\"oe_view_nocontent_create\">\n"
 "              </p>\n"
 "            "
 msgstr "<p class=\"oe_view_nocontent_create\">\n"
-"                Click to create a commission refund.\n"
+"                Klicken Sie hier zur Gutschrift einer Provision.\n"
 "              </p><p>\n"
-"                A refund is a document that credits an invoice completely or\n"
-"                partially.\n"
+"                Eine Gutschrift ist ein Beleg, der eine Provisionsabrechnung \n"
+"                teilweise oder vollständig storniert.\n"
 "              </p><p>\n"
-"                Instead of manually creating a customer refund, you\n"
-"                can generate it directly from the related customer invoice.\n"
+"                Anstelle einer manuellen Provisionsgutschrift, können Sie diesen\n"
+"                Beleg direkt von der Provisionsabrechung erstellen.\n"
 "              </p>\n"
 "            "
 
@@ -53,10 +53,10 @@ msgid "<p class=\"oe_view_nocontent_create\">\n"
 "              </p>\n"
 "            "
 msgstr "<p class=\"oe_view_nocontent_create\">\n"
-"                Klicken Sie zur Erstellung  einer Ausgangsrechnung.\n"
+"                Klicken Sie zur Erstellung  einer Abrechnung.\n"
 "              </p><p>\n"
 "                Der elektronische Rechnungsversand erleichtert und beschleunigt nochmals den \n"
-"                Zahlungsausgleich. Ihre Kunden bekommen per E-Mail-Rechnungen gesendet, die\n"
+"                Zahlungsausgleich. Ihre Kunden bekommen per E-Mail Rechnungen gesendet, die\n"
 "                dann auf schnellem Weg Online bezahlt werden können und/oder in das eigene \n"
 "                System zur dortigen Weiterbearbeitung importiert werden.  \n"
 "              </p><p>\n"
@@ -76,55 +76,55 @@ msgstr "Assigned partner has no commission pricelist defined! Please go to assig
 #: field:crm.lead,associated_partner:0
 #: field:sale.order,associated_partner:0
 msgid "Associated Partner"
-msgstr "Associated Partner"
+msgstr "Provisionsempfänger"
 
 #. module: partner_billing
 #: code:addons/partner_billing/account.py:108
 #, python-format
 msgid "Commission"
-msgstr "Commission"
+msgstr "Provision"
 
 #. module: partner_billing
 #: selection:account.invoice,commission_type:0
 msgid "Commission Invoice"
-msgstr "Commission Invoice"
+msgstr "Provisionsabrechnung"
 
 #. module: partner_billing
 #: model:ir.actions.act_window,name:partner_billing.action_invoice_commission
 #: model:ir.ui.menu,name:partner_billing.menu_action_invoice_commission
 msgid "Commission Invoices"
-msgstr "Commission Invoices"
+msgstr "Provisionsabrechnungen"
 
 #. module: partner_billing
 #: field:res.partner.grade,commission_pricelist:0
 msgid "Commission Pricelist"
-msgstr "Commission Pricelist"
+msgstr "Provisions-Preisliste"
 
 #. module: partner_billing
 #: selection:account.invoice,commission_type:0
 msgid "Commission Refund"
-msgstr "Commission Refund"
+msgstr "Provisionsgutschrift"
 
 #. module: partner_billing
 #: model:ir.actions.act_window,name:partner_billing.action_invoice_commission_refunds
 #: model:ir.ui.menu,name:partner_billing.menu_action_commission_refunds
 msgid "Commission Refunds"
-msgstr "Commission Refunds"
+msgstr "Provisionsgutschriften"
 
 #. module: partner_billing
 #: view:res.partner:partner_billing.partner_commission_journal_res_partner_form
 msgid "Commission Setting"
-msgstr "Commission Setting"
+msgstr "Provisionseinstellung"
 
 #. module: partner_billing
 #: field:account.invoice,commission_type:0
 msgid "Commission type"
-msgstr "Commission type"
+msgstr "Provisionstyp"
 
 #. module: partner_billing
 #: model:ir.ui.menu,name:partner_billing.menu_finance_commissions
 msgid "Commissions "
-msgstr "Commissions "
+msgstr "Provision "
 
 #. module: partner_billing
 #: model:ir.model,name:partner_billing.model_account_invoice
@@ -134,12 +134,12 @@ msgstr "Rechnung"
 #. module: partner_billing
 #: field:account.invoice,origin_invoice:0
 msgid "Invoice of Origin"
-msgstr "Invoice of Origin"
+msgstr "Ursprüngliche Rechnung"
 
 #. module: partner_billing
 #: help:account.invoice,origin_invoice:0
 msgid "Invoice, which reconcilliation triggered creation of this invoice."
-msgstr "Invoice, which reconcilliation triggered creation of this invoice."
+msgstr "Rechnung, dessen Ausgleich eine Provision ausgelöst hat."
 
 #. module: partner_billing
 #: model:ir.model,name:partner_billing.model_account_journal
@@ -149,7 +149,7 @@ msgstr "Journal"
 #. module: partner_billing
 #: field:res.partner,commission_journal:0
 msgid "Journal for Commissions"
-msgstr "Journal for Commissions"
+msgstr "Journal für Provisionsrechnungen"
 
 #. module: partner_billing
 #: model:ir.model,name:partner_billing.model_crm_lead
@@ -166,12 +166,12 @@ msgstr "Erstelle Verkaufsauftrag"
 #: code:addons/partner_billing/sale_order.py:47
 #, python-format
 msgid "Missing Values Error!"
-msgstr "Missing Values Error!"
+msgstr "Fehler mangels Daten!"
 
 #. module: partner_billing
 #: selection:account.invoice,commission_type:0
 msgid "Not Commission"
-msgstr "Not Commission"
+msgstr "Keine Provision"
 
 #. module: partner_billing
 #: model:ir.model,name:partner_billing.model_res_partner
@@ -181,25 +181,25 @@ msgstr "Partner"
 #. module: partner_billing
 #: model:product.pricelist.type,name:partner_billing.commission_pricelist_type
 msgid "Partner Commission"
-msgstr "Partner Commission"
+msgstr "Partner Provision"
 
 #. module: partner_billing
 #: code:addons/partner_billing/sale_order.py:48
 #, python-format
 msgid "Partner {0} has no reseller pricelist defined! Please go into partner grade {1} and define a reseller pricelist!"
-msgstr "Partner {0} has no reseller pricelist defined! Please go into partner grade {1} and define a reseller pricelist!"
+msgstr "Für den Partner {0} gibt es keine Reseller Preise! Erstellen Sie diese in den Partner-Einstufungen {1} !"
 
 #. module: partner_billing
 #: help:account.invoice,associated_partner:0
 #: help:crm.lead,associated_partner:0
 #: help:sale.order,associated_partner:0
 msgid "Partner/Reseller who reported this lead. Important for commission invoices."
-msgstr "Partner/Reseller who reported this lead. Important for commission invoices."
+msgstr "Partner/Reseller der Verkauf ermöglicht hat. Der Eintrag ist für den Provisionsempfang zwingend."
 
 #. module: partner_billing
 #: field:res.partner.grade,reseller_pricelist:0
 msgid "Reseller Pricelist"
-msgstr "Reseller Pricelist"
+msgstr "Reseller Preisliste"
 
 #. module: partner_billing
 #: model:ir.model,name:partner_billing.model_sale_advance_payment_inv
