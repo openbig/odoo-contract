@@ -56,6 +56,7 @@ class crm_make_sale(osv.osv_memory):
     def makeOrder(self, cr, uid, ids, context=None):
         res = super(crm_make_sale, self).makeOrder(
             cr, uid, ids, context=context)
+        _logger.warn(res)
         # deal only with singles
         if not isinstance(res['res_id'], int):
             return res
@@ -64,8 +65,12 @@ class crm_make_sale(osv.osv_memory):
         sale_order_obj = self.pool.get('sale.order')
         _logger.warn(locals())
         for quotation in sale_order_obj.browse(cr, uid, res['res_id']):
+            lead = crm_lead_obj.browse(cr, uid, data)[0]
             vals = {
-                'associated_partner': crm_lead_obj.browse(cr, uid, data) and crm_lead_obj.browse(cr, uid, data)[0].associated_partner.id or False
+                'associated_partner': lead and lead.associated_partner.id or False,
+                'campaign_id': lead and lead.campaign_id.id or False,
+                'medium_id': lead and lead.medium_id.id or False,
+                'source_id': lead and lead.source_id.id or False,
             }
             sale_order_obj.write(cr, uid, [quotation.id], vals)
 
