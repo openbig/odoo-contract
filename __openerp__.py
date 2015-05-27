@@ -36,6 +36,7 @@
         'portal_sale',
         'web_kanban',
         'crm_partner_assign',
+        'product_digital_media',
     ],
     "demo_xml": [],
     "data": [

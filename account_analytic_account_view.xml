@@ -9,6 +9,11 @@
             <field name="mode">primary</field>
             <field name="inherit_id" ref="account_analytic_analysis.account_analytic_account_form_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Downloads">
+                        <field name="file_ids"/>
+                    </page>
+                </xpath>
                 <xpath expr="//page[@name='contract_page']" position="before">
                     <page string="Licenses" name="license_page" attrs="{'invisible':[('type','not in',['contract'])]}">
                         <button name="%(crm_contractmanagement.action_res_license_update)d"
