@@ -25,6 +25,8 @@
                     <field name="date" readonly="1"/>
                     <!--<field name="product_ids" invisible="1"/>-->
                     <field name="uploaded_by" invisible="1"/>
+                    <button name='get_form' type="object" string="Download"
+                        icon="gtk-jump-to" />
                 </tree>
             </field>
         </record>
@@ -36,7 +38,7 @@
                     
                     <label for="title_name" class="oe_edit_only" string="File Name"/>
                     <h1>
-                        <field name="title_name" required="1" string="Project Name"/>
+                        <field name="title_name" nolabel="1" required="1" string="Project Name"/>
                     </h1>
                     
                     <group>

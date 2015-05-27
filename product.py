@@ -25,6 +25,7 @@
 ##############################################################################
 
 from openerp import models, fields, api
+from openerp.tools.translate import _
 
 
 import logging
@@ -68,6 +69,19 @@ class digital_media(models.Model):
                     line.analytic_account_id._get_downloads()
         return super(digital_media, self).write(vals)
 
+    @api.multi
+    def get_form(self):
+        _logger.warn(locals())
+        _logger.warn(self.id)
+        return {
+            'name': _('Digital Media'),
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_id': self.id,
+            'res_model': 'digital.media',
+            'type': 'ir.actions.act_window',
+            'target': 'new',
+        }
 
 class product_product(models.Model):
     _inherit = 'product.product'
