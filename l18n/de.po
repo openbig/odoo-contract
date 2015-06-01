@@ -42,24 +42,24 @@ msgstr ""
 
 #. module: contractmanagement_licenses
 #: field:sale.order.line,is_application:0
-msgid "Objectpackage?"
-msgstr "Objektpaket ?"
+msgid "Application?"
+msgstr "Applikation ?"
 
 #. module: contractmanagement_licenses
 #: view:account.analytic.account:contractmanagement_licenses.account_analytic_account_timesheet_form_m_a_buttons
-msgid "Objectpackages"
-msgstr "Objektpakete"
+msgid "Applications"
+msgstr "Applikationen"
 
 #. module: contractmanagement_licenses
 #: field:contract.view.setting,applications_categ:0
 #: field:sale.config.settings,applications_product_categ:0
-msgid "Objektpackage Category"
-msgstr "Kategorie für Objektpaket"
+msgid "Application Category"
+msgstr "Kategorie für Applikation"
 
 #. module: contractmanagement_licenses
 #: model:ir.actions.act_window,name:contractmanagement_licenses.action_order_line_contract_applications_tree
-msgid "Contract's Objectpackages"
-msgstr "Objektpakete zum Vertrag"
+msgid "Contract's Applications"
+msgstr "Applikationen zum Vertrag"
 
 #. module: contractmanagement_licenses
 #: model:ir.actions.act_window,name:contractmanagement_licenses.action_order_line_contract_modules_tree
@@ -109,8 +109,8 @@ msgstr "Kategorie für Module"
 
 #. module: contractmanagement_licenses
 #: field:sale.config.settings,module_contractmanagement_licenses:0
-msgid "Modules and Objectpackages Views on Contracts"
-msgstr "Anzeige der Objektpaket- und Module in Verträgen"
+msgid "Modules and Application Views on Contracts"
+msgstr "Anzeige der Applikationen und Module in Verträgen"
 
 #. module: contractmanagement_licenses
 #: model:ir.model,name:contractmanagement_licenses.model_sale_order_line

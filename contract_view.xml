@@ -31,7 +31,7 @@
     				<button class="oe_inline oe_stat_button" type="action" name="%(action_order_line_contract_modules_tree)d" 
                         icon="fa-plus-square-o"  string="Module" widget="statinfo"/>
                     <button class="oe_inline oe_stat_button" type="action" name="%(action_order_line_contract_applications_tree)d" 
-                        icon="fa-anchor" string="Objektpaket" widget="statinfo"/>
+                        icon="fa-anchor" string="Application" widget="statinfo"/>
     			</xpath>
     		</field>
     	</record>
