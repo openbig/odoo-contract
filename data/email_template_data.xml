@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
-    <data noupdate="0">
+    <data noupdate="1">
     	<record id="template_portal_invitation" model="email.template">
             <field name="name">Portal Invitation</field>
             <field name="email_from">${object.user_from.email}</field>
