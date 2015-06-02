@@ -29,7 +29,66 @@
     "author": "openbig.org",
     "website": "http://www.openbig.org",
     "category": "CRM, account",
-    "description": """ """,
+    "description": """
+Invoice partner sales and calculate commissions
+===============================================
+The partner billing module allows to invoice reduced prices based 
+on a partner pricelist or to create a commission supplier invoice. 
+After payment receipt of the origin invoice paid by the customer 
+commission invoices will be created in draft mode at the same time. 
+
+Define new commission Pricelists
+--------------------------------
+
+At first you have to define a pricelist used to calculate the 
+commissions on payment. This is done by a new pricelist type 
+named "partner commission".
+
+Assign pricelists to partner grades
+-----------------------------------
+
+You can assign a classic "sale" pricelist and now also a pricelist 
+of type "partner commission". For the case an associated partner 
+exists finally on an invoice the system generates automatically 
+a commission invoice too.
+
+Assign grades to Partners
+-------------------------
+
+You can assign grades to partners. By this Odoo core feature 
+the system exactlly knows which price to calculate for the 
+case of direct billing and it also knows the commission 
+percentages.
+
+Associate partner to sale
+--------------------------
+
+It is possible to associate the partner on the lead, opportunity, 
+sale order or lately on the invoice. This association finally 
+controls the commission billing.
+
+Register payment
+-----------------
+
+The registration of a payment controls the time when a commission 
+invoice will be created by Odoo.
+
+Invoice confirmation or merge
+-----------------------------
+
+Finally an accountant have to confirm the invoice in draft mode. 
+For sure there can be more than one commission invoice created. 
+This depends also from the time frequence you usually want to pay 
+the reseller commissions. In that case the wizard to merge 
+invoices is very conveniant to use.
+
+Contributors
+============
+* Mikołaj Dziurzyński (OpenBIG.org)
+* Thorsten Vocks (OpenBIG.org)
+
+
+    """,
     "depends": [
         'account',
         'crm_partner_assign',
