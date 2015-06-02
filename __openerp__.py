@@ -29,7 +29,21 @@
     "author": "openbig.org",
     "website": "http://www.openbig.org",
     "category": "CRM",
-    "description": """""",
+    "description": """
+Portal Invitation from temmplate
+================================
+
+The module portal_invitation improves the onboarding 
+of new portal users. The usability of odoo core module 
+was a bit ugly, leading to unclear advises for a new 
+portal user. Main improvement was done by fixing the 
+email template and the translation related to it. 
+
+Contributors
+============
+* Thorsten Vocks (OpenBIG.org)
+* Mikołaj Dziurzyński (OpenGlobe)
+    """,
     "depends": [
         'email_template',
         'portal',
@@ -39,6 +53,7 @@
         'data/email_template_data.xml',
         ],
     "active": False,
+    "license": "AGPL-3",
     "installable": True
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
