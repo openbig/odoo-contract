@@ -90,7 +90,7 @@ Contributors
 
     """,
     "depends": [
-        'account',
+        'crm_contractmanagement',
         'crm_partner_assign',
         'sale_crm',
         'account_invoice_merge',
