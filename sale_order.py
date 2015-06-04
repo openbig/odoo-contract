@@ -46,7 +46,6 @@ class sale_order(models.Model):
             if not self.partner_invoice_id.grade_id.reseller_pricelist:
                 raise osv.except_osv(_('Missing Values Error!'), _(
                     "Partner {0} has no reseller pricelist defined! Please go into partner grade {1} and define a reseller pricelist!".format(self.partner_invoice_id.name, self.partner_invoice_id.grade_id.name)))
-            _logger.warn("Got hree?")
             self.pricelist_id = self.partner_invoice_id.grade_id.reseller_pricelist.id
 
 
@@ -56,14 +55,12 @@ class crm_make_sale(osv.osv_memory):
     def makeOrder(self, cr, uid, ids, context=None):
         res = super(crm_make_sale, self).makeOrder(
             cr, uid, ids, context=context)
-        _logger.warn(res)
         # deal only with singles
         if not isinstance(res['res_id'], int):
             return res
         data = context and context.get('active_ids', []) or []
         crm_lead_obj = self.pool.get('crm.lead')
         sale_order_obj = self.pool.get('sale.order')
-        _logger.warn(locals())
         for quotation in sale_order_obj.browse(cr, uid, res['res_id']):
             lead = crm_lead_obj.browse(cr, uid, data)[0]
             vals = {
