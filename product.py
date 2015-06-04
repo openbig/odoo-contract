@@ -35,6 +35,7 @@ _logger = logging.getLogger(__name__)
 
 class digital_media(models.Model):
     _name = 'digital.media'
+    _rec_name = 'title_name'
 
     date = fields.Date("Creation Date", default=fields.Date.context_today)
     uploaded_by = fields.Many2one(
