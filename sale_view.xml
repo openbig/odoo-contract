@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<record id="view_order_form_remaining_days" model="ir.ui.view">
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+            	<field name="date_order" position="after">
+            		<field name="expected_date" attrs="{'readonly':[('state','not in',['draft','sent'])]}" context="{'default_expected_contract_start':expected_date}"/>
+            	</field>
+                <field name="project_id" position="attributes">
+                    <attribute name="on_change">onchange_remaining_days(project_id)</attribute>
+                </field>
+                <field name="project_id" position="after">
+                    <field name="days_to_contract_end" attrs="{'readonly':'True','invisible':[('project_id','=',False)]}"/> 
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
