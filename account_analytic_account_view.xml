@@ -16,7 +16,7 @@
                 </xpath>
                 <xpath expr="//page[@name='contract_page']" position="before">
                     <page string="Licenses" name="license_page" attrs="{'invisible':[('type','not in',['contract'])]}">
-                        <button name="%(crm_contractmanagement.action_res_license_update)d"
+                        <button name="%(sale_contractmanagement.action_res_license_update)d"
                             string="Update Licenses with Database Name" type="action" class="oe_highlight"/>
                         <field name="license_ids">
                             <tree editable="bottom">

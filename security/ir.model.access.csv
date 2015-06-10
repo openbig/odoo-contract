@@ -2,8 +2,8 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_portal_customer_sla,access.portal.customer.sla,project_sla.model_project_sla,base.group_portal,1,0,0,0
 access_portal_customer_account_invoice,access.portal.customer.account.invoice,account_analytic_analysis.model_account_analytic_invoice_line,base.group_portal,1,0,0,0
 access_account_analytic_account,account_analytic_account,analytic.model_account_analytic_account,base.group_portal,1,0,0,0
-access_res_license,res.license,crm_contractmanagement.model_res_license,base.group_portal,1,0,0,0
-access_res_license_update_wizard,res.license.update.wizard,crm_contractmanagement.model_res_license_update_wizard,base.group_sale_salesman,1,1,0,0
-access_res_license_update_line,res.license.update.line,crm_contractmanagement.model_res_license_update_line,base.group_sale_salesman,1,1,0,0
+access_res_license,res.license,sale_contractmanagement.model_res_license,base.group_portal,1,0,0,0
+access_res_license_update_wizard,res.license.update.wizard,sale_contractmanagement.model_res_license_update_wizard,base.group_sale_salesman,1,1,0,0
+access_res_license_update_line,res.license.update.line,sale_contractmanagement.model_res_license_update_line,base.group_sale_salesman,1,1,0,0
 access_digital_media_portal,digital.media,product_digital_media.model_digital_media,base.group_portal,1,0,0,0
 access_product_product_portal,product.product,product.model_product_product,base.group_portal,1,0,0,0

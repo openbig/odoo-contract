@@ -32,7 +32,7 @@
     "description": """ This module introduces portal customization for customers. Throught the portal, customers can:\n *view their quotations, sale orders and invoices""",
     "depends": [
         'project_sla',
-        'crm_contractmanagement',
+        'sale_contractmanagement',
         'portal_sale',
         'web_kanban',
         'crm_partner_assign',
