@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+    	<record id="view_sales_config_contract_buttons" model="ir.ui.view">
+            <field name="name">sale settings</field>
+            <field name="model">sale.config.settings</field>
+            <field name="inherit_id" ref="sale.view_sales_config"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//div[@name='module_analytic_user_function']" position="inside">
+            		<div>
+                        <field name="module_contractmanagement_licenses" class="oe_inline"/>
+                        <label for="module_contractmanagement_licenses"/>
+                    </div>
+                    <div>
+                        <label for="modules_product_categ"/>
+                        <field name="modules_product_categ" class="oe_inline"/>
+                    </div>
+                    <div>
+                        <label for="applications_product_categ"/>
+                        <field name="applications_product_categ" class="oe_inline"/>
+                    </div>
+            	</xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
