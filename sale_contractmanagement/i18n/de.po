@@ -1,0 +1,580 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale_contractmanagement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-02 12:28+0000\n"
+"PO-Revision-Date: 2015-04-02 12:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_contractmanagement
+#: model:email.template,body_html:sale_contractmanagement.template_new_contract_info
+msgid "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); \">\n"
+"<b><i>Dear ${object.partner_id.name},</i></b>\n"
+"\n"
+"<p>There is a new contract available for You!</p>\n"
+"<p>In order to obtain your i-doit license:</p>\n"
+"<ol>\n"
+"    <li>Log into our customer portal <a href=\"${object.portal_login_page}\">here</a>. If you haven't yet received your invitation email, please contact our Customer Care!</li>\n"
+"    <li>Go into your contract, simply by clicking it</li>\n"
+"    <li>In the table below basic information, your license records may be in one of two states:</li>\n"
+"    <ul>\n"
+"        <li>Ready - you will be able to download your license straight away</li>\n"
+"        <li>Set Database Name - in order to download your license, first you have to set its database name. Click \"Update Licenses with Database Name\", enter your database name in \"New Database Name\" column and press \"Generate\"</li>\n"
+"    </ul>\n"
+"\n"
+"</ol> \n"
+"<br>\n"
+"<a style=\"display:block; width: 150px; height:20px; margin-left: 120px; color: #DDD; font-family: 'Lucida Grande', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: bold; text-align: center; text-decoration: none !important; line-height: 1; padding: 5px 0px 0px 0px; background-color: #8E0000; border-radius: 5px 5px; background-repeat: repeat no-repeat;\" href=\"${object.portal_login_page}\">View Your Contract</a>\n"
+"<br>\n"
+"<br>\n"
+"<p>-- Synetics Gmbh</p>\n"
+"</div>\n"
+"            "
+msgstr "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); \">\n"
+"<b><i>Hallo ${object.partner_id.name},</i></b>\n"
+"\n"
+"<p>wir haben aktuelle Vertragsdaten für Sie!</p>\n"
+"<p>Sie erhalten Ihre Lizenz wie folgt:</p>\n"
+"<ol>\n"
+"    <li>Melden Sie sich zuerst am <a href=\"${object.portal_login_page}\">Kundenportal</a> an. Bitte senden Sie uns eine E-Mail, wenn Sie noch keinen persönlichen Login haben. \n"
+"    <li>Klicken Sie auf den Button unten, um Ihren Vertrag zu öffnen.</li>\n"
+"    <li>Sie finden hier unterhalb der allgemeinen Daten sämtliche Lizenzen, die sich folgendermassen unterscheiden:</li>\n"
+"    <ul>\n"
+"        <li>Fertig zum Download - Die Lizenz kann sofort geladen werden.</li>\n"
+"        <li>Datenbankname eingeben - Klicken Sie auf \"Lizenz für Datenbank erstellen\", geben Sie dann in der Spalte \"Neuer Datenbankname\" eine Bezeichnung ein, bevor Sie durch einen Klick auf den Button \"Erstellen\" Ihre Eingabe bestätigen.\n"
+"    </ul>\n"
+"\n"
+"</ol> \n"
+"<br>\n"
+"<a style=\"display:block; width: 150px; height:20px; margin-left: 120px; color: #DDD; font-family: 'Lucida Grande', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: bold; text-align: center; text-decoration: none !important; line-height: 1; padding: 5px 0px 0px 0px; background-color: #8E0000; border-radius: 5px 5px; background-repeat: repeat no-repeat;\" href=\"${object.portal_login_page}\">Vertrag anzeigen</a>\n"
+"<br>\n"
+"<br>\n"
+"<p>-- Synetics GmbH--</p>\n"
+"</div>\n"
+"            "
+
+#. module: sale_contractmanagement
+#: model:ir.actions.act_window,help:sale_contractmanagement.action_customer_contracts
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                    Click to create a new contract.\n"
+"                </p><p>\n"
+"                    Use contracts to follow tasks, issues, timesheets or invoicing based on\n"
+"                    work done, expenses and/or sales orders. Odoo will automatically manage\n"
+"                    the alerts for the renewal of the contracts to the right salesperson.\n"
+"                </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                    Klicken Sie zur Erstellung eines Vertrags.\n"
+"                </p><p>\n"
+"                    Setzen Sie Verträge ein, um hierüber Aufgaben, Fälle, Stundenzettel oder Abrechnungen \n"
+"                    geleisteter Arbeitszeiten, Personalspesen und/oder Verkaufsaufträge zu verfolgen. Odoo\n"
+"                    überwacht dabei automatisch, ob Verträge erneuert werden müssen und benachrichtigt den\n"
+"                    zugewiesenen Verkäufer.\n"
+"                </p>\n"
+"            "
+
+#. module: sale_contractmanagement
+#: view:account.analytic.account:sale_contractmanagement.view_account_analytic_account_kanban
+msgid "Active License(s)"
+msgstr "Aktuelle Lizenzen"
+
+#. module: sale_contractmanagement
+#: view:project.task:sale_contractmanagement.view_task_form_remodelled
+msgid "Add a description..."
+msgstr "Fügen Sie eine Beschreibung hinzu ..."
+
+#. module: sale_contractmanagement
+#: model:ir.model,name:sale_contractmanagement.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Vertragskonto"
+
+#. module: sale_contractmanagement
+#: view:res.license.update.wizard:sale_contractmanagement.res_license_update_wizard_wiec
+msgid "Attention!"
+msgstr "Achtung!"
+
+#. module: sale_contractmanagement
+#: field:account.analytic.account,license_ids:0
+msgid "Available Licenses"
+msgstr "Neue Lizenzen"
+
+#. module: sale_contractmanagement
+#: view:res.license.update.wizard:sale_contractmanagement.res_license_update_wizard_wiec
+msgid "Available for Modification"
+msgstr "Zu bearbeitende Lizenzen"
+
+#. module: sale_contractmanagement
+#: field:sale.config.settings,backend_address:0
+msgid "Backend Address"
+msgstr "Backend Adresse"
+
+#. module: sale_contractmanagement
+#: view:res.license.update.wizard:sale_contractmanagement.res_license_update_wizard_wiec
+msgid "Below listed are Your licenses available for modification. If the license is generated for the first time, please input Your database name and click Generate."
+msgstr "Sie finden hier neue oder geänderte Lizenzen. Wenn Sie Ihre Lizenz zum ersten Mal generieren, müssen Sie hier nur Ihren Datenbanknamen eingeben und dann auf Lizenz generieren klicken."
+
+#. module: sale_contractmanagement
+#: view:res.license.update.wizard:sale_contractmanagement.res_license_update_wizard_wiec
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: sale_contractmanagement
+#: model:ir.actions.act_window,name:sale_contractmanagement.action_customer_contracts
+msgid "Contracts"
+msgstr "Verträge"
+
+#. module: sale_contractmanagement
+#: view:sale.config.settings:sale_contractmanagement.view_config_settings_licenses
+msgid "Contracts Management"
+msgstr "Vertragsverwaltung"
+
+#. module: sale_contractmanagement
+#: field:res.license,create_uid:0
+#: field:res.license.update.line,create_uid:0
+#: field:res.license.update.wizard,create_uid:0
+msgid "Created by"
+msgstr "Erstellt durch"
+
+#. module: sale_contractmanagement
+#: field:res.license,create_date:0
+#: field:res.license.update.line,create_date:0
+#: field:res.license.update.wizard,create_date:0
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: sale_contractmanagement
+#: field:res.license,partner_id:0
+msgid "Customer"
+msgstr "Kunde"
+
+#. module: sale_contractmanagement
+#: view:account.analytic.account:sale_contractmanagement.view_account_analytic_account_kanban
+msgid "Customer:"
+msgstr "Kunde:"
+
+#. module: sale_contractmanagement
+#: field:account.analytic.account,days_before_end:0
+msgid "Days before Contract Ends"
+msgstr "Tage vor Laufzeitende"
+
+#. module: sale_contractmanagement
+#: view:project.task:sale_contractmanagement.view_task_form_remodelled
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: sale_contractmanagement
+#: code:addons/sale_contractmanagement/res_license.py:66
+#: code:addons/sale_contractmanagement/res_license.py:109
+#: code:addons/sale_contractmanagement/sale.py:56
+#, python-format
+msgid "Error!"
+msgstr "Fehler!"
+
+#. module: sale_contractmanagement
+#: view:res.license.update.wizard:sale_contractmanagement.res_license_update_wizard_wiec
+msgid "Every next change of database name, will need to be initiated thought Customer Care. If You changed Your database name, please contact Customer Care!"
+msgstr "Jede weitere Änderung muss durch Ihren i-doit Kundenservice erfolgen. Wenn Sie Ihre Datenbank ändern möchten, informieren Sie uns!"
+
+#. module: sale_contractmanagement
+#: field:account.invoice,expected_contract_start:0
+#: field:sale.order,expected_date:0
+msgid "Expected Contract Start"
+msgstr "Vertragsbeginn"
+
+#. module: sale_contractmanagement
+#: view:account.analytic.account:sale_contractmanagement.view_account_analytic_account_kanban
+msgid "Expiration date:"
+msgstr "Ablaufdatum:"
+
+#. module: sale_contractmanagement
+#: view:project.task:sale_contractmanagement.view_task_form_remodelled
+msgid "Extra Info"
+msgstr "Zusatzinformation"
+
+#. module: sale_contractmanagement
+#: help:account.analytic.account,portal_login_page:0
+msgid "Field for portal information management."
+msgstr "Feld für das Portalmanagementsystem."
+
+#. module: sale_contractmanagement
+#: view:project.task:sale_contractmanagement.view_task_form_remodelled
+msgid "Gantt View"
+msgstr "Gantt-Ansicht"
+
+#. module: sale_contractmanagement
+#: view:res.license.update.wizard:sale_contractmanagement.res_license_update_wizard_wiec
+msgid "Generate"
+msgstr "Lizenz generieren"
+
+#. module: sale_contractmanagement
+#: field:res.license,id:0
+#: field:res.license.update.line,id:0
+#: field:res.license.update.wizard,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: sale_contractmanagement
+#: help:account.analytic.account,unlimited:0
+msgid "If this field is checked there will be on notifications about contract expiration"
+msgstr "Durch Aktivierung erfolgen Benachrichtigungen zukünftiger Vertragsabläufe "
+
+#. module: sale_contractmanagement
+#: model:ir.model,name:sale_contractmanagement.model_account_invoice
+msgid "Invoice"
+msgstr "Rechnung"
+
+#. module: sale_contractmanagement
+#: help:account.analytic.account,days_before_end:0
+msgid "Invoice will be created some time before contract ends."
+msgstr "Tage vor Laufzeitende zur Terminierung der Folgeabrechnung"
+
+#. module: sale_contractmanagement
+#: field:res.license,modification_date:0
+#: field:res.license.update.line,modification_date:0
+msgid "Last Modification Date"
+msgstr "Letztes Änderungsdatum"
+
+#. module: sale_contractmanagement
+#: field:res.license,write_uid:0
+#: field:res.license.update.line,write_uid:0
+#: field:res.license.update.wizard,write_uid:0
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert durch"
+
+#. module: sale_contractmanagement
+#: field:res.license,write_date:0
+#: field:res.license.update.line,write_date:0
+#: field:res.license.update.wizard,write_date:0
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: sale_contractmanagement
+#: field:account.analytic.account,license_file:0
+#: view:res.license:sale_contractmanagement.res_licenses_inside_form_view
+#: field:res.license,license_file:0
+#: field:res.license.update.line,license_id:0
+msgid "License"
+msgstr "Lizenz"
+
+#. module: sale_contractmanagement
+#: field:res.license,database_name:0
+msgid "License Database"
+msgstr "Lizenzdatenbank"
+
+#. module: sale_contractmanagement
+#: field:res.license,license_filename:0
+msgid "License Filename"
+msgstr "Lizenzdatei"
+
+#. module: sale_contractmanagement
+#: view:sale.config.settings:sale_contractmanagement.view_config_settings_licenses
+msgid "License Generation"
+msgstr "Lizenzerstellung"
+
+#. module: sale_contractmanagement
+#: field:account.analytic.account,license_filename:0
+msgid "License Name"
+msgstr "Lizenz"
+
+#. module: sale_contractmanagement
+#: field:project.task,license_owner:0
+#: field:sale.order.line,license_owner:0
+msgid "License Owner"
+msgstr "Lizenzinhaber"
+
+#. module: sale_contractmanagement
+#: view:account.analytic.account:sale_contractmanagement.view_account_analytic_account_form_licenses
+#: model:ir.actions.act_window,name:sale_contractmanagement.action_res_license_update
+#: view:res.license:sale_contractmanagement.res_licenses_inside_tree_view
+#: field:res.license.update.wizard,license_ids:0
+msgid "Licenses"
+msgstr "Lizenzen"
+
+#. module: sale_contractmanagement
+#: view:res.license.update.wizard:sale_contractmanagement.res_license_update_wizard_wiec
+msgid "Licenses Available for Generation/Modification"
+msgstr "Erstellung / Änderung einer Lizenz"
+
+#. module: sale_contractmanagement
+#: field:sale.config.settings,license_gen_login:0
+msgid "Login"
+msgstr "Login"
+
+#. module: sale_contractmanagement
+#: view:account.analytic.account:sale_contractmanagement.view_account_analytic_account_kanban
+msgid "Manager:"
+msgstr "Ihr Ansprechpartner:"
+
+#. module: sale_contractmanagement
+#: field:account.analytic.account,manager_email:0
+msgid "Managers' Email"
+msgstr "Ihr Emailkontakt"
+
+#. module: sale_contractmanagement
+#: field:account.analytic.account,manager_image:0
+msgid "Managers' Image"
+msgstr "Bild Ihres Kontakts"
+
+#. module: sale_contractmanagement
+#: field:account.analytic.account,manager_tel:0
+msgid "Managers' Phone No."
+msgstr "Ihr Telefonkontakt"
+
+#. module: sale_contractmanagement
+#: view:project.task:sale_contractmanagement.view_task_so_line_field
+#: view:sale.order.line:sale_contractmanagement.view_order_line_contract
+msgid "New Contract"
+msgstr "Neuer Vertrag"
+
+#. module: sale_contractmanagement
+#: field:res.license.update.line,newdb_name:0
+msgid "New Database Name"
+msgstr "Neue Datenbank"
+
+#. module: sale_contractmanagement
+#: code:addons/sale_contractmanagement/account_analytic_account.py:146
+#, python-format
+msgid "No Date Start!"
+msgstr "Der Vertragsbeginn fehlt!"
+
+#. module: sale_contractmanagement
+#: field:account.analytic.account,num_of_invoices:0
+msgid "Number of Created Invoices"
+msgstr "Anzahl der Rechnungen"
+
+#. module: sale_contractmanagement
+#: view:project.task:sale_contractmanagement.view_task_so_line_field
+msgid "Order Line"
+msgstr "Auftragszeile"
+
+#. module: sale_contractmanagement
+#: field:account.analytic.account,sale_order_line:0
+msgid "Origin Sale Order Line"
+msgstr "Ursprüngliche Auftragszeile"
+
+#. module: sale_contractmanagement
+#: model:ir.model,name:sale_contractmanagement.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: sale_contractmanagement
+#: field:sale.config.settings,license_gen_pass:0
+msgid "Password"
+msgstr "Passwort"
+
+#. module: sale_contractmanagement
+#: code:addons/sale_contractmanagement/res_license.py:109
+#, python-format
+msgid "Please contact Customer Support.\n"
+" Error: {0}"
+msgstr "Bitte kontaktieren Sie unseren Kundenservice.\n"
+" Error: {0}"
+
+#. module: sale_contractmanagement
+#: code:addons/sale_contractmanagement/res_license.py:66
+#, python-format
+msgid "Please contact Customer Support. Cannot connect to license generator, check credentials."
+msgstr "Bitte kontaktieren Sie unseren Kundenservice. Sie können keine Verbindung zum Lizenzgenerator herstellen, prüfen Sie nochmals Ihre Logindaten."
+
+#. module: sale_contractmanagement
+#: code:addons/sale_contractmanagement/sale.py:57
+#, python-format
+msgid "Please define sales journal for this company: \"%s\" (id:%d)."
+msgstr "Bitte definieren Sie ein Verkaufsjournal für: \"%s\" (id:%d).: "
+
+#. module: sale_contractmanagement
+#: code:addons/sale_contractmanagement/account_analytic_account.py:146
+#, python-format
+msgid "Please fill Date Start!"
+msgstr "Geben Sie einen Vertragsbeginn ein!"
+
+#. module: sale_contractmanagement
+#: field:account.analytic.account,portal_login_page:0
+msgid "Portal Login Page"
+msgstr "Portal Login Seite"
+
+#. module: sale_contractmanagement
+#: field:res.license.update.line,olddb_name:0
+msgid "Previous Database Name"
+msgstr "Vorherige Datenbank"
+
+#. module: sale_contractmanagement
+#: model:ir.model,name:sale_contractmanagement.model_product_template
+msgid "Product Template"
+msgstr "Produktvorlage"
+
+#. module: sale_contractmanagement
+#: view:product.template:sale_contractmanagement.view_product_sla_form
+msgid "Project Management Information"
+msgstr "Projektmanagementinformation"
+
+#. module: sale_contractmanagement
+#: selection:res.license,editable:0
+msgid "Ready"
+msgstr "Erstellt"
+
+#. module: sale_contractmanagement
+#: field:project.task,related_contract:0
+#: field:sale.order.line,related_contract:0
+msgid "Related Contract"
+msgstr "Verbundener Vertrag"
+
+#. module: sale_contractmanagement
+#: field:product.template,sla:0
+msgid "Related SLA"
+msgstr "Verknüpfte SLA"
+
+#. module: sale_contractmanagement
+#: view:project.task:sale_contractmanagement.view_task_form_remodelled
+msgid "Remaining"
+msgstr "Verbleibend"
+
+#. module: sale_contractmanagement
+#: field:sale.order,days_to_contract_end:0
+msgid "Remaining Contract Days"
+msgstr "Verbleibende Vertragslaufzeit"
+
+#. module: sale_contractmanagement
+#: view:res.partner:sale_contractmanagement.view_partners_form_contracts_button
+msgid "Sale Contracts"
+msgstr "Verträge"
+
+#. module: sale_contractmanagement
+#: model:ir.model,name:sale_contractmanagement.model_sale_order
+msgid "Sales Order"
+msgstr "Verkaufsauftrag"
+
+#. module: sale_contractmanagement
+#: model:ir.model,name:sale_contractmanagement.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Auftragsposition"
+
+#. module: sale_contractmanagement
+#: view:account.analytic.account:sale_contractmanagement.view_account_analytic_account_form_remodelled
+msgid "Save"
+msgstr "Speichern"
+
+#. module: sale_contractmanagement
+#: view:account.analytic.account:sale_contractmanagement.view_account_analytic_account_form_remodelled
+msgid "Send by Email"
+msgstr "E-Mail senden"
+
+#. module: sale_contractmanagement
+#: view:product.template:sale_contractmanagement.view_product_sla_form
+#: field:product.template,sla_related:0
+msgid "Service Level Agreement"
+msgstr "Service Level Agreement"
+
+#. module: sale_contractmanagement
+#: selection:res.license,editable:0
+msgid "Set Database Name"
+msgstr "Datenbank zuweisen"
+
+#. module: sale_contractmanagement
+#: view:project.task:sale_contractmanagement.view_task_form_remodelled
+msgid "Spent Hours"
+msgstr "Geleistete Stunden"
+
+#. module: sale_contractmanagement
+#: field:res.license,editable:0
+msgid "Status"
+msgstr "Status"
+
+#. module: sale_contractmanagement
+#: model:ir.model,name:sale_contractmanagement.model_project_task
+msgid "Task"
+msgstr "Aufgaben"
+
+#. module: sale_contractmanagement
+#: view:project.task:sale_contractmanagement.view_task_form_remodelled
+msgid "Task Work"
+msgstr "Erledigte Aufgaben"
+
+#. module: sale_contractmanagement
+#: view:project.project:sale_contractmanagement.edit_project_contract_to_admin_only
+msgid "To invoice or setup invoicing and renewal options, go to the related contract:"
+msgstr "Zur Abrechnung oder neuen Erstellung eines Vertrags, wechseln Sie zum verknüpften Vertrag."
+
+#. module: sale_contractmanagement
+#: field:account.analytic.account,unlimited:0
+msgid "Unlimited Contract"
+msgstr "Unlimitierter Vertrag"
+
+#. module: sale_contractmanagement
+#: view:account.analytic.account:sale_contractmanagement.view_account_analytic_account_form_licenses
+msgid "Update Licenses with Database Name"
+msgstr "Lizenzaktualisierung durch neue Datenbank"
+
+#. module: sale_contractmanagement
+#: field:res.license.update.line,wizard_id:0
+msgid "Wizard"
+msgstr "Assistent"
+
+#. module: sale_contractmanagement
+#: view:project.task:sale_contractmanagement.view_task_form_remodelled
+msgid "Workload"
+msgstr "Arbeitsauslastung"
+
+#. module: sale_contractmanagement
+#: code:addons/sale_contractmanagement/account_analytic_account.py:135
+#, python-format
+msgid "Wrong interal type"
+msgstr "Fehler bei Typ"
+
+#. module: sale_contractmanagement
+#: code:addons/sale_contractmanagement/account_analytic_account.py:135
+#, python-format
+msgid "Wrong interval type"
+msgstr "Fehler bei Intervall"
+
+#. module: sale_contractmanagement
+#: model:email.template,subject:sale_contractmanagement.template_new_contract_info
+msgid "You have a new contract at ${object.manager_id.company_id.name}!"
+msgstr "Ihr neuer Vertrag mit der ${object.manager_id.company_id.name}"
+
+#. module: sale_contractmanagement
+#: field:res.license,contract_id:0
+msgid "license_ids"
+msgstr "license_ids"
+
+#. module: sale_contractmanagement
+#: view:account.analytic.account:sale_contractmanagement.view_account_analytic_account_form_remodelled
+msgid "onchange_recurring_invoices(recurring_invoices, date_start, recurring_interval, recurring_rule_type, days_before_end)"
+msgstr "onchange_recurring_invoices(recurring_invoices, date_start, recurring_interval, recurring_rule_type, days_before_end)"
+
+#. module: sale_contractmanagement
+#: view:sale.order:sale_contractmanagement.view_order_form_remaining_days
+msgid "onchange_remaining_days(project_id)"
+msgstr "onchange_remaining_days(project_id)"
+
+#. module: sale_contractmanagement
+#: view:res.license.update.wizard:sale_contractmanagement.res_license_update_wizard_wiec
+msgid "or"
+msgstr "oder"
+
+#. module: sale_contractmanagement
+#: view:account.analytic.account:sale_contractmanagement.view_account_analytic_account_form_remodelled
+msgid "{'readonly':[('state','=','open')]}"
+msgstr "{'readonly':[('state','=','open')]}"
+
+#. module: sale_contractmanagement
+#: view:account.analytic.account:sale_contractmanagement.view_account_analytic_account_form_remodelled
+msgid "{'required': True}"
+msgstr "{'required': True}"
+
+#. module: sale_contractmanagement
+#: view:account.analytic.account:sale_contractmanagement.view_account_analytic_account_form_remodelled
+msgid "{'required': [('type','not in',['template'])]}"
+msgstr "{'required': [('type','not in',['template'])]}"
+

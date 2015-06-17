@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="res_license_update_wizard_wiec" model="ir.ui.view">
+            <field name="name">Licenses</field>
+            <field name="model">res.license.update.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Licenses Available for Generation/Modification" version="8.0">
+                    <separator string="Licenses Available for Generation/Modification"/>
+                    <p>Below listed are Your licenses available for modification. If the license is generated for the first time, please input Your database name and click Generate.</p>
+                    <p><b>Attention!</b></p>
+                    <p>Every next change of database name, will need to be initiated thought Customer Care. If You changed Your database name, please contact Customer Care!</p> 
+
+                    <field name="license_ids">
+                        <tree create="0" delete="0" editable="top" string="Available for Modification">
+                            <field name="modification_date" attrs="{'readonly': True}"/>
+                            <field name="olddb_name" readonly="1"/>
+                            <field name="newdb_name"/>
+                        </tree>
+                    </field>
+                    <footer>
+                        <button name="generate_new" string="Generate" type="object" class="oe_highlight"  />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_res_license_update" model="ir.actions.act_window">
+            <field name="name">Licenses</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.license.update.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>
