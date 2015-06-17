@@ -1,0 +1,34 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * sale_productsales
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-11-26 18:33+0000\n"
+"PO-Revision-Date: 2014-12-03 16:50+0100\n"
+"Last-Translator: openbig.org - Thorsten Vocks <thorsten.vocks@openbig.org>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.5\n"
+
+#. module: sale_productsales
+#: model:ir.actions.act_window,name:sale_productsales.action_order_line_product_sales_tree
+#: model:ir.ui.menu,name:sale_productsales.menu_order_line_product_sales
+msgid "Sales by Product"
+msgstr "Produktverkauf"
+
+#. module: sale_productsales
+#: field:sale.config.settings,module_sale_productsales:0
+msgid "Show product sales in a new menu"
+msgstr "Anzeige der Produktverkäufe in einem eigenen Menü"
+
+#. module: sale_productsales
+#: help:sale.config.settings,module_sale_productsales:0
+msgid "This option installs sale_productsales module."
+msgstr ""
+"Durch Aktivierung dieser Option installieren Sie das Modul sale_productsales"
