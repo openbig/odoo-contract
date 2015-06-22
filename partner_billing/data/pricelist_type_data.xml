@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="commission_pricelist_type" model="product.pricelist.type">
+			<field name="name">Partner Commission</field>
+			<field name="key">partner_commission</field>
+		</record>
+	</data>
+</openerp>

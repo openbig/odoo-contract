@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_account_analytic_account_form_portal" model="ir.ui.view">
+            <field name="name">analytic.analytic.account.form.portal</field>
+            <field name="model">account.analytic.account</field>
+            <field name="priority" eval="100"/>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="account_analytic_analysis.account_analytic_account_form_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Downloads">
+                        <field name="file_ids"/>
+                    </page>
+                </xpath>
+                <xpath expr="//page[@name='contract_page']" position="before">
+                    <page string="Licenses" name="license_page" attrs="{'invisible':[('type','not in',['contract'])]}">
+                        <button name="%(sale_contractmanagement.action_res_license_update)d"
+                            string="Update Licenses with Database Name" type="action" class="oe_highlight"/>
+                        <field name="license_ids">
+                            <tree editable="bottom">
+                                <field name="partner_id" invisible="1"/>
+                                <field name="database_name"/>
+                                <field name="modification_date"/>
+                                <field name="license_filename" invisible="1"/>
+                                <field name="license_file" readonly="1" filename="license_filename"/>
+                                <field name="editable"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//header" position='attributes'>
+                    <attribute name="attrs">{'invisible':1}</attribute>
+                </xpath>
+                <field name='manager_id' position="replace"></field>
+                <field name="type" position="after">
+                    <field name="manager_id" string="Contract Manager"/>
+                    <field name="manager_tel" />
+                    <field name="manager_email"/>
+                    <separator/>
+                    <field name="manager_image" nolabel="1" widget="image" style="right: 0px"/>
+                </field>
+                <xpath expr="//field[@name='quantity_max']/.." position='replace'>
+                    <separator/>
+                </xpath>
+                <xpath expr="//label[@for='quantity_max']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <field name="code" position="replace"></field>
+                <xpath expr="//group[@name='main']//group">
+                    <field name="code"/>
+                </xpath>
+                <field name="partner_id" position="attributes">
+                    <attribute name="attrs">{'required': [('type','=','contract'),('recurring_invoices', '=', True)]}</attribute>
+                </field>
+                <xpath expr="//separator[@name='toinvoice']" position="replace"/>
+                <xpath expr="//table[@class='oe_form_analytic_account']" position="replace"></xpath>
+                <xpath expr="//group[@name='invoice_on_timesheets']" position="replace"></xpath>
+                <xpath expr="//button[@string='Cost/Revenue']" position="replace"></xpath>
+                <field name="template_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="license_ids" position="after">
+                    <separator/>
+                    <p>Please click on the icons on the top right corner to find all further download files
+related to your contract</p>
+                </field>
+                <separator string="Recurring Invoices" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </separator>
+                <xpath expr="//field[@name='recurring_invoices']/../.." position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath> 
+                <xpath expr="//label[@for='recurring_interval']/.." position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//label[@for='recurring_invoice_line_ids']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='recurring_invoice_line_ids']/.." position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <field name="message_ids" position="replace">
+                    <field name="message_ids" widget="mail_thread" readonly="1"/>
+                </field>
+                <field name="sla_ids" position="replace">
+                    <field name="sla_ids" nolabel="1" readonly="1"/>
+                </field>
+                <xpath expr='//div[@name="project"]' position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_account_analytic_account_tree_portal" model="ir.ui.view">
+            <field name="name">analytic.analytic.account.tree.portal</field>
+            <field name="model">account.analytic.account</field>
+            <field name="arch" type="xml">
+                <tree string="Your Contracts">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="date_start"/>
+                    <field name="date"/>
+                    <field name="manager_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_account_analytic_account_kanban_portal" model="ir.ui.view">
+            <field name="name">analytic.analytic.account.kanban.portal</field>
+            <field name="model">account.analytic.account</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="manager_id"/>
+                    <field name="license_ids"/>
+                    <field name="color" invisible="1"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_a_analytic_a oe_kanban_global_click" style="min-width: 210px">
+                                <div class="oe_dropdown_toggle oe_dropdown_kanban" groups='base.group_user'>
+                                    <span class="oe_e">í</span>
+                                    <ul class="oe_dropdown_menu">
+                                        <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+                                    </ul>
+                                </div>
+                                <div class="oe_kanban_a_analytic_a">
+                                    <div>
+                                        <h4 class="text-center"><strong><field name="name"/></strong></h4>
+                                    </div>
+                                    <div style="padding-left: 0.5em; padding-top: 0.5em; padding-bottom: 0.5em">
+                                        <h5 class="text-left">Customer: <field name="partner_id"/></h5>
+                                        <h5 class="text-left">Manager: <field name="manager_id"/></h5>
+                                    </div>
+                                    <div style="padding-left: 0.5em; padding-top: 0.5em; padding-bottom: 0.5em">
+                                        <t t-raw="record.license_ids.raw_value.length"/> Active License(s)
+                                    </div>
+                                </div>
+                                <div class="oe_kanban_footer_left">
+                                    <span t-if="record.date.raw_value">
+                                        <span class="oe_e">N</span>Expiration date:
+                                        <field name="date"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="open_view_contract" model="ir.actions.act_window">
+            <field name="name">Contracts</field>
+            <field name="res_model">account.analytic.account</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="context">{'default_type':'contract'}</field>
+            <field name="domain">[('type','=','contract'),('partner_id','!=',False),('template_id','!=',False),]</field>
+            <field name="view_id" ref="view_account_analytic_account_kanban_portal"/>
+            <field name="search_view_id" ref="account_analytic_analysis.view_account_analytic_account_overdue_search"/>
+            <field name="multi">False</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new contract.
+                </p><p>
+                    You have no contracts available.
+                </p>
+            </field>
+        </record>
+
+        <record id="portal_action_contracts_kanban_spec" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="open_view_contract"/>
+            <field name="view_id" ref="view_account_analytic_account_kanban_portal"/>
+            <field name="view_mode">kanban</field>
+            <field name="sequence" eval="1"/>
+        </record>
+
+        <!--<record id="portal_action_contracts_tree_spec" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="open_view_contract"/>
+            <field name="view_id" ref="view_account_analytic_account_tree_portal"/>
+            <field name="view_mode">tree</field>
+            <field name="sequence" eval="50"/>
+        </record>-->
+
+        <record id="portal_action_invoices_form_spec" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="open_view_contract"/>
+            <field name="view_id" ref="view_account_analytic_account_form_portal"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="80"/>
+            <field name="priority" eval="100"/>
+        </record>
+        <menuitem name="Contracts" id="portal_contracts" parent="portal.portal_menu" sequence="1" groups="base.group_portal"/>
+        <menuitem name="Your Contracts" id="portal_services_contracts" parent="portal_contracts"
+            action="open_view_contract" sequence="10" groups="base.group_portal"/>
+        <menuitem name="Projects" id="portal.portal_projects" parent="portal.portal_menu" groups="base.group_system" sequence="40"/>
+        <menuitem name="Leads &amp; Opportunities" id="crm_partner_assign.portal_leads" parent="portal.portal_menu" groups="base.group_system" sequence="25"/>
+
+    </data>
+</openerp>

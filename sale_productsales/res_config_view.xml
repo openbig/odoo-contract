@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="res_config_view_sales" model="ir.ui.view">
+            <field name="name">sale settings</field>
+            <field name="model">sale.config.settings</field>
+            <field name="inherit_id" ref="sale.view_sales_config"/>
+            <field name="arch" type="xml">
+                <div name="module_sale_margin" position="after">
+                    <div name="module_sale_productsales">
+                        <field name="module_sale_productsales" class="oe_inline"/>
+                        <label for="module_sale_productsales"/>
+                    </div>
+                </div>
+            </field>
+        </record>
+    </data>
+</openerp>

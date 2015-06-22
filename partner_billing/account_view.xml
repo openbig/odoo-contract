@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="invoice_form_associated_partner" model="ir.ui.view">
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="associated_partner" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                    <field name="commission_type" invisible="1"/>
+                    <!--<field name="commission_invoice" widget="many2many_tags" attrs="{'invisible':[('commission_invoice','=',False)],'readonly':1}" />-->
+                </xpath>
+            </field>
+        </record>
+        <record id="invoice_supplier_form_commission_type" model="ir.ui.view">
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="commission_type" invisible="1"/>
+                    <field name="origin_invoice" attrs="{'invisible':[('commission_type','=','not_commission')],'readonly':[('state','not in',['draft'])]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- domain configuration of purchase invoice actions-->
+
+        <record id="account.action_invoice_tree2" model="ir.actions.act_window">
+            <field name="name">Supplier Invoices</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','=','in_invoice'),('commission_type','=','not_commission')]</field>
+            <field name="context">{'default_type': 'in_invoice', 'type': 'in_invoice', 'journal_type': 'purchase'}</field>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to record a new supplier invoice.
+              </p><p>
+                You can control the invoice from your supplier according to
+                what you purchased or received. Odoo can also generate
+                draft invoices automatically from purchase orders or receipts.
+              </p>
+            </field>
+        </record>
+        <record id="account.action_invoice_tree4" model="ir.actions.act_window">
+            <field name="name">Supplier Refunds</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','=','in_refund'),('commission_type','=','not_commission')]</field>
+            <field name="context">{'default_type': 'in_refund', 'type': 'in_refund', 'journal_type': 'purchase_refund'}</field>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to register a refund you received from a supplier.
+              </p><p>
+                Instead of creating the supplier refund manually, you can generate
+                refunds and reconcile them directly from the related supplier invoice.
+              </p>
+            </field>
+        </record>
+
+        <!--end-->
+
+        <menuitem id="menu_finance_commissions" name="Commissions " parent="account.menu_finance" sequence="3" />
+        <record id="action_invoice_commission" model="ir.actions.act_window">
+            <field name="name">Commission Invoices</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','=','in_invoice'),('commission_type','=','commission_invoice')]</field>
+            <field name="context">{'default_type':'in_invoice', 'type':'in_invoice', 'journal_type': 'purchase'}</field>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a customer invoice.
+              </p><p>
+                Odoo's electronic invoicing allows to ease and fasten the
+                collection of customer payments. Your customer receives the
+                invoice by email and he can pay online and/or import it
+                in his own system.
+              </p><p>
+                The discussions with your customer are automatically displayed at
+                the bottom of each invoice.
+              </p>
+            </field>
+        </record>
+        <menuitem action="action_invoice_commission" sequence="1" id="menu_action_invoice_commission" parent="menu_finance_commissions"/>
+        <record id="action_invoice_commission_refunds" model="ir.actions.act_window">
+            <field name="name">Commission Refunds</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','=','in_refund'),('commission_type','=','commission_refund')]</field>
+            <field name="context">{'default_type':'in_refund', 'type':'in_refund', 'journal_type': 'purchase_refund'}</field>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a commission refund.
+              </p><p>
+                A refund is a document that credits an invoice completely or
+                partially.
+              </p><p>
+                Instead of manually creating a customer refund, you
+                can generate it directly from the related customer invoice.
+              </p>
+            </field>
+        </record>
+        <menuitem action="action_invoice_commission_refunds" sequence="2" id="menu_action_commission_refunds" parent="menu_finance_commissions"/>
+
+        <!-- workflow function triggering creation of commission invoice -->
+
+            <record id="account.act_paid" model="workflow.activity">
+                <field name="wkf_id" ref="account.wkf"/>
+                <field name="name">paid</field>
+                <!--<field name="flow_stop">True</field>-->
+                <field name="action">confirm_paid(),create_commission_invoice()</field>
+                <field name="kind">function</field>
+                <field name="signal_send">subflow.paid</field>
+            </record>
+
+         <!-- end -->
+    </data>
+</openerp>

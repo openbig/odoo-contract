@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--<record id="edit_project_contract_to_admin_only" model="ir.ui.view">
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet[@string='Project']//p" position="attributes">
+                    <attribute name="groups">base.group_system</attribute>
+                </xpath>
+            </field>
+        </record>-->
+        <record id="edit_project_contract_to_admin_only" model="ir.ui.view">
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet[@string='Project']//p" position="replace">
+                    <group>
+                        <p attrs="{'invisible': [('analytic_account_id','=',False)]}" groups="base.group_system">
+                            To invoice or setup invoicing and renewal options, go to the related contract:
+                            <field name="analytic_account_id" readonly="1" required="0" class="oe_inline" nolabel="1"/>.
+                        </p>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+		<record id="view_task_form_remodelled" model="ir.ui.view">
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+            	<page string="Extra Info" position="replace"/>
+            	<page string="Description" position="replace">
+	                <page string="Extra Info">
+	                	<group col="4">
+	                        <field name="priority" groups="base.group_user" widget="priority"/>
+	                        <field name="sequence"/>
+	                        <field name="partner_id"/>
+	                        <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+	                    </group>
+	                    <group>
+	                    	<field name="description" placeholder="Add a description..."/>
+	                    </group>
+	                    <group>
+	                        <group string="Gantt View">
+	                            <field name="date_start"/>
+	                            <field name="date_end"/>
+	                        </group>
+	                        <group>
+	                            <field name="date_last_stage_update" groups="base.group_no_one"/>
+	                        </group>
+	                    </group>
+	                </page>
+                    <page string="Workload">
+                            <field name="work_ids" groups="project.group_tasks_work_on_tasks">
+                                <tree string="Task Work" editable="top">
+                                    <field name="name"/>
+                                    <field name="hours" widget="float_time" sum="Spent Hours"/>
+                                    <field name="date"/>
+                                    <field name="user_id" context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'project.group_project_user']}"/>
+                                </tree>
+                            </field>
+                            <group>
+                             <group class="oe_subtotal_footer oe_right" name="project_hours" groups="project.group_time_work_estimation_tasks">
+                                <field name="effective_hours" widget="float_time"/>
+                                <label for="remaining_hours" string="Remaining" groups="project.group_time_work_estimation_tasks"/>
+                                <div>
+                                    <field name="remaining_hours" widget="float_time" groups="project.group_time_work_estimation_tasks"/>
+                                </div>
+                                <field name="total_hours" widget="float_time" class="oe_subtotal_footer_separator"/>
+                             </group>
+                            </group>
+                            <div class="oe_clear"/>
+                        </page>
+	            </page>
+            </field>
+        </record>
+        <record id="view_task_so_line_field" model="ir.ui.view">
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="sale_service.view_sale_service_inherit_form2"/>
+            <field name="arch" type="xml">
+            	<field name="sale_line_id" position="replace"/>
+            	<field name="reviewer_id" position="after">
+            		<field name="sale_line_id" string="Order Line" attrs="{'invisible':[('sale_line_id','==',False)]}"/>
+            		<field name="related_contract" attrs="{'invisible':[('sale_line_id','==',False)]}" domain="[('type','=','contract'),('template_id','!=',False),('partner_id','!=',False)]"/>
+                    <field name="license_owner" attrs="{'invisible':[('sale_line_id','==',False)]}" readonly="1"/>
+            	</field>
+                <xpath expr="//notebook" position="before">
+                    <button name="new_contract_from_task"
+                              string="New Contract" type="object" icon="gtk-dnd" class="oe_highlight" attrs = "{'invisible':['|',('related_contract','!=',False),('sale_line_id','=',False)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_order_form_remaining_days" model="ir.ui.view">
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="project_id" position="attributes">
+                    <attribute name="on_change">onchange_remaining_days(project_id)</attribute>
+                </field>
+                <field name="project_id" position="after">
+                    <field name="days_to_contract_end" attrs="{'readonly':'True','invisible':[('project_id','=',False)]}"/> 
+                </field>
+            </field>
+        </record>
+        <!-- info about contract is stored here, everything else gets it from here-->
+        <record id="view_order_line_contract" model="ir.ui.view">
+         	<field name="model">sale.order.line</field>
+         	<field name="inherit_id" ref="sale.view_order_line_form2"/>
+            <field name="arch" type="xml">
+                <header position="replace"></header>
+                <sheet position="before">
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done" statusbar_colors='{"exception":"red","cancel":"red"}'/>
+                    </header>
+                </sheet>
+            	<div position="after">
+                    <field name="license_owner" readonly="1" attrs="{'invisible':[('related_contract','==',False)]}"/>
+           			<field name="related_contract" attrs="{'invisible':[('related_contract','==',False)]}"/>
+            		<button name="new_contract"
+                              string="New Contract" type="object" icon="gtk-dnd" class="oe_highlight" attrs = "{'invisible':[('related_contract','!=',False)]}"/>
+            	</div>
+            </field>
+        </record>
+        <record id="view_account_analytic_account_kanban" model="ir.ui.view">
+            <field name="name">analytic.analytic.account.kanban</field>
+            <field name="model">account.analytic.account</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="manager_id"/>
+                    <field name="license_ids"/>
+                    <field name="color" invisible="1"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_a_analytic_a oe_kanban_global_click" style="min-width: 210px">
+                                <div class="oe_dropdown_toggle oe_dropdown_kanban" groups='base.group_user'>
+                                    <span class="oe_e">í</span>
+                                    <ul class="oe_dropdown_menu">
+                                        <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+                                    </ul>
+                                </div>
+                                <div class="oe_kanban_a_analytic_a">
+                                    <div>
+                                        <h4 class="text-center"><strong><field name="name"/></strong></h4>
+                                    </div>
+                                    <div style="padding-left: 0.5em; padding-top: 0.5em; padding-bottom: 0.5em">
+                                        <h5 class="text-left">Customer: <field name="partner_id"/></h5>
+                                        <h5 class="text-left">Manager: <field name="manager_id"/></h5>
+                                    </div>
+                                    <div style="padding-left: 0.5em; padding-top: 0.5em; padding-bottom: 0.5em">
+                                        <t t-raw="record.license_ids.raw_value.length"/> Active License(s)
+                                    </div>
+                                </div>
+                                <div class="oe_kanban_footer_left">
+                                    <span t-if="record.date.raw_value">
+                                        <span class="oe_e">N</span>Expiration date:
+                                        <field name="date"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record id="action_contracts_kanban" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="account_analytic_analysis.action_account_analytic_overdue_all"/>
+            <field name="view_id" ref="view_account_analytic_account_kanban"/>
+            <field name="view_mode">kanban</field>
+            <field name="sequence" eval="1"/>
+        </record>
+        <record id="view_account_analytic_account_form_remodelled" model="ir.ui.view">
+            <field name="name">account.analytic.account.form.remodelled</field>
+            <field name="model">account.analytic.account</field>
+            <field name="priority" eval="99"/>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="account_analytic_analysis.account_analytic_account_form_form"/>
+            <field name="arch" type="xml">
+                <field name="manager_id" position="after">
+                    <field name="sale_order_line" attrs="{'invisible':True}"/>
+                </field>
+                <field name="recurring_invoices" position="replace">
+                    <field name="recurring_invoices" on_change="onchange_recurring_invoices(recurring_invoices, date_start, recurring_interval, recurring_rule_type, days_before_end)" class="oe_inline" />
+                </field>
+                <field name="recurring_interval" position="attributes">
+                    <attribute name="on_change">onchange_recurring_invoices(recurring_invoices, date_start, recurring_interval, recurring_rule_type, days_before_end)</attribute>
+                </field>
+                <field name="recurring_rule_type" position="attributes">
+                    <attribute name="on_change">onchange_recurring_invoices(recurring_invoices, date_start, recurring_interval, recurring_rule_type, days_before_end)</attribute>
+                </field>
+                <field name="state" position="before">
+                    <button name="action_contract_send" string="Send by Email" type="object" states="open" groups="base.group_user"/>
+                    <button name="write_new" string="Save" type="object" class="oe_highlight" states="preparing"/>
+                </field>
+                <field name="manager_id" position="attributes">
+                	<attribute name="attrs">{'required': [('type','not in',['template'])]}</attribute>
+                </field>
+                <field name="manager_id" position="after">
+                    <field name="color" invisible="1"/>
+                </field>
+                <field name="partner_id" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+                <field name="date_start" position="attributes">
+                    <attribute name="on_change">onchange_recurring_invoices(recurring_invoices, date_start, recurring_interval, recurring_rule_type, days_before_end)</attribute>
+                    <attribute name="attrs">{'required': True}</attribute>
+                </field>
+                <field name="template_id" position="attributes">
+                    <attribute name="attrs">{'readonly':[('state','=','open')]}</attribute>
+                    <attribute name="required">1</attribute>
+                </field>
+                <field name="recurring_next_date" position="before">
+                    <field name="days_before_end" on_change="onchange_recurring_invoices(recurring_invoices, date_start, recurring_interval, recurring_rule_type, days_before_end)"/>
+                </field>
+                <xpath expr="//page[@name='contract_page']" position="before">
+                    <page string="Licenses" name="license_page" attrs="{'invisible':[('type','not in',['contract'])]}">
+                        <button name="%(action_res_license_update)d"
+                            string="Update Licenses with Database Name" type="action" class="oe_highlight"/>
+                        <field name="license_ids">
+                            <tree editable="bottom">
+                                <field name="partner_id" invisible="1"/>
+                                <field name="database_name"/>
+                                <field name="modification_date"/>
+                                <field name="license_filename" invisible="1"/>
+                                <field name="license_file" readonly="1" filename="license_filename"/>
+                                <field name="editable"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//page[@name='contract_page']" position="after">
+                    <page string="Downloads" name="downloads_page" attrs="{'invisible':[('type','not in',['contract'])]}">
+                        <field name="file_ids"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record id="account_analytic_analysis.action_account_analytic_overdue_all" model="ir.actions.act_window">
+            <field name="name">Contracts</field>
+            <field name="res_model">account.analytic.account</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{'default_type':'contract','default_state':'draft'}</field>
+            <field name="domain">[('type','=','contract'),('partner_id','!=',False),('template_id','!=',False)]</field>
+            <field name="view_id" ref="view_account_analytic_account_form_remodelled"/>
+            <field name="search_view_id" ref="account_analytic_analysis.view_account_analytic_account_overdue_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new contract.
+                </p><p>
+                    Use contracts to follow tasks, issues, timesheets or invoicing based on
+                    work done, expenses and/or sales orders. Odoo will automatically manage
+                    the alerts for the renewal of the contracts to the right salesperson.
+                </p>
+            </field>
+        </record>
+    </data>
+</openerp>

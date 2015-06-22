@@ -1,0 +1,164 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* portal_invitation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-02 12:23+0000\n"
+"PO-Revision-Date: 2015-04-02 12:23+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: portal_invitation
+#: model:email.template,body_html:portal_invitation.template_portal_invitation
+msgid "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); \">\n"
+"<h3><b><i>Dear ${object.user_name},</i></b></h3>\n"
+"\n"
+"<p>You have been given access to ${object.company}'s ${object.portal}. Through our portal you will be able to manage your contracts, licenses, invoices and quotations.</p>\n"
+"<p>In order to log in, please do:</p>\n"
+"\n"
+"<h3><b>1) Set your password</b></h3>\n"
+"\n"
+"<u><p>Follow the below button to set your password.</p></u>\n"
+"\n"
+"<a style=\"display:block; width: 150px; height:20px; margin-left: 120px; color: #DDD; font-family: 'Lucida Grande', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: bold; text-align: center; text-decoration: none !important; line-height: 1; padding: 5px 0px 0px 0px; background-color: #8E0000; border-radius: 5px 5px; background-repeat: repeat no-repeat;\" href=\"${object.signup_url}\">Set Password</a>\n"
+"\n"
+"<p>If you ever forget your password, please request another invitation email from our Customer Care.</p>\n"
+"\n"
+"<h3><b>2) Login page</b></h3>\n"
+"\n"
+"<p>If you have already set your password, you can login at:</p>\n"
+"\n"
+"\n"
+"<h4><p><b>Username:</b> ${object.login}</p></h4>\n"
+"<h4><b>Portal login site: <a href=\"${object.portal_url}\">${object.portal_url}</a></b></h4>\n"
+"<br>\n"
+"<p>${object.welcome_message}</p>\n"
+"\n"
+"<br>\n"
+"<br>\n"
+"<p>-- Synetics Gmbh</p>\n"
+"</div>\n"
+"            "
+msgstr "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); \">\n"
+"<h3><b><i>Dear ${object.user_name},</i></b></h3>\n"
+"\n"
+"<p>You have been given access to ${object.company}'s ${object.portal}. Through our portal you will be able to manage your contracts, licenses, invoices and quotations.</p>\n"
+"<p>In order to log in, please do:</p>\n"
+"\n"
+"<h3><b>1) Set your password</b></h3>\n"
+"\n"
+"<u><p>Follow the below button to set your password.</p></u>\n"
+"\n"
+"<a style=\"display:block; width: 150px; height:20px; margin-left: 120px; color: #DDD; font-family: 'Lucida Grande', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: bold; text-align: center; text-decoration: none !important; line-height: 1; padding: 5px 0px 0px 0px; background-color: #8E0000; border-radius: 5px 5px; background-repeat: repeat no-repeat;\" href=\"${object.signup_url}\">Set Password</a>\n"
+"\n"
+"<p>If you ever forget your password, please request another invitation email from our Customer Care.</p>\n"
+"\n"
+"<h3><b>2) Login page</b></h3>\n"
+"\n"
+"<p>If you have already set your password, you can login at:</p>\n"
+"\n"
+"\n"
+"<h4><p><b>Username:</b> ${object.login}</p></h4>\n"
+"<h4><b>Portal login site: <a href=\"${object.portal_url}\">${object.portal_url}</a></b></h4>\n"
+"<br>\n"
+"<p>${object.welcome_message}</p>\n"
+"\n"
+"<br>\n"
+"<br>\n"
+"<p>-- Synetics Gmbh</p>\n"
+"</div>\n"
+"            "
+
+#. module: portal_invitation
+#: field:portal.wizard.user,user_from:0
+msgid "Addressing User"
+msgstr "Addressing User"
+
+#. module: portal_invitation
+#: code:addons/portal_invitation/wizard/portal_wizard.py:96
+#, python-format
+msgid "Cannot find template for portal user invitations! The templates' name has to be = Portal Invitation  "
+msgstr "Cannot find template for portal user invitations! The templates' name has to be = Portal Invitation  "
+
+#. module: portal_invitation
+#: field:portal.wizard.user,company:0
+msgid "Company"
+msgstr "Company"
+
+#. module: portal_invitation
+#: field:portal.wizard.user,db:0
+msgid "Database"
+msgstr "Database"
+
+#. module: portal_invitation
+#: code:addons/portal_invitation/wizard/portal_wizard.py:63
+#, python-format
+msgid "Email Required"
+msgstr "Email Required"
+
+#. module: portal_invitation
+#: field:portal.wizard.user,login:0
+msgid "Login"
+msgstr "Login"
+
+#. module: portal_invitation
+#: field:portal.wizard.user,portal:0
+msgid "Portal"
+msgstr "Portal"
+
+#. module: portal_invitation
+#: field:portal.wizard.user,portal_url:0
+msgid "Portal URL"
+msgstr "Portal URL"
+
+#. module: portal_invitation
+#: model:ir.model,name:portal_invitation.model_portal_wizard_user
+msgid "Portal User Config"
+msgstr "Portalbenutzer Konfiguration"
+
+#. module: portal_invitation
+#: field:portal.wizard.user,user_to:0
+msgid "Receiveing User"
+msgstr "Receiveing User"
+
+#. module: portal_invitation
+#: field:portal.wizard.user,signup_url:0
+msgid "Signup URL"
+msgstr "Signup URL"
+
+#. module: portal_invitation
+#: code:addons/portal_invitation/wizard/portal_wizard.py:95
+#, python-format
+msgid "Template not found!"
+msgstr "Template not found!"
+
+#. module: portal_invitation
+#: field:portal.wizard.user,user_name:0
+msgid "User Name"
+msgstr "User Name"
+
+#. module: portal_invitation
+#: field:portal.wizard.user,welcome_message:0
+msgid "Welcome Messsage"
+msgstr "Welcome Messsage"
+
+#. module: portal_invitation
+#: code:addons/portal_invitation/wizard/portal_wizard.py:64
+#, python-format
+msgid "You must have an email address in your User Preferences to send emails."
+msgstr "You must have an email address in your User Preferences to send emails."
+
+#. module: portal_invitation
+#: model:email.template,subject:portal_invitation.template_portal_invitation
+msgid "Your Portal account at ${object.company}!"
+msgstr "Your Portal account at ${object.company}!"
+
